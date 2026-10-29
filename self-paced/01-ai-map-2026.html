@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тема 1 — Картата на ИИ през 2026</title>
+    <link rel="stylesheet" href="shared.css">
+</head>
+<body data-deck="01-ai-map-2026">
+<div class="deck">
+
+    <!-- 1: Title -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag anim-up">Тема 1 · ≈ 35 мин</div>
+            <h1 class="anim-up anim-up-d1">Какво може ИИ и с какви инструменти</h1>
+            <div class="divider anim-up anim-up-d2"></div>
+            <p class="lead anim-up anim-up-d3">В тази тема ще разберете, <strong>какво всъщност е „изкуственият интелект“</strong>, какво можете да му поръчате, кои програми има и как да изберете подходяща за вашата работа. Не е нужен предишен опит.</p>
+            <div class="cards anim-up anim-up-d3">
+                <div class="card"><h3>Ще научите</h3><ul><li>какво е ИИ асистент и как „мисли“</li><li>за какви задачи го ползвате</li><li>кои инструменти има и как да изберете</li></ul></div>
+                <div class="card blue"><h3>Ще направите</h3><ul><li>първата си заявка към ИИ</li><li>кратък одит на онлайн присъствието си</li></ul></div>
+            </div>
+        </div>
+        <div class="big-number">01</div>
+    </div>
+
+    <!-- 2: Video -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Интерактивно видео · ≈ 40 сек</div>
+            <h2>Накратко: какво ви очаква</h2>
+            <div class="xp-wrap">
+                <div class="xp">
+
+                    <div class="xp-scene" data-dur="7500" data-cap="Преди няколко години ИИ беше новина. Днес е обикновен работен инструмент: пише, рисува, анализира и дори изпълнява задачи вместо вас.">
+                        <div class="xp-t xp-a" data-at="200">ИИ вече е <em>навсякъде</em></div>
+                        <div class="xp-row">
+                            <div class="xp-ico xp-a" data-at="1300"><b>✍️</b><span>Пише</span><small>текстове и имейли</small></div>
+                            <div class="xp-ico xp-a" data-at="2300"><b>🎨</b><span>Рисува</span><small>банери и снимки</small></div>
+                            <div class="xp-ico xp-a" data-at="3300"><b>📊</b><span>Анализира</span><small>таблици и данни</small></div>
+                            <div class="xp-ico xp-a" data-at="4300"><b>🤖</b><span>Действа</span><small>като агент</small></div>
+                        </div>
+                    </div>
+
+                    <div class="xp-scene" data-dur="9000" data-cap="Работата с ИИ е разговор: описвате какво искате на обикновен български и получавате чернова за секунди.">
+                        <div class="xp-t xp-a" data-at="200">Вие давате задача, той <em>отговаря</em></div>
+                        <div class="xp-bub you xp-type" data-at="900" data-text="Направи ми план за 5 поста за козметичния ми салон."></div>
+                        <div class="xp-bub ai xp-type" data-at="3800" data-text="1) Преди/след на маникюр · 2) Съвет за грижа за ръцете · 3) Представяне на екипа · 4) Отстъпка за ноември · 5) Отзив от клиент"></div>
+                    </div>
+
+                    <div class="xp-scene" data-dur="9500" data-cap="Зад отговора стои модел, научен от огромно количество текстове. Той съставя отговор, който звучи правилно, но не проверява фактите. Тази проверка е вашата роля в цикъла.">
+                        <div class="xp-t xp-a" data-at="200">Как <em>работи</em> това</div>
+                        <figure class="diagram xp-svg">
+                            <svg viewBox="0 0 900 270" role="img" aria-label="Вие пишете заявка към ИИ модел, получавате отговор, проверявате го и при нужда поправяте заявката.">
+                                <defs><marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><polygon points="0,0 10,5 0,10" fill="currentColor"/></marker></defs>
+                                <g class="xp-a" data-at="700">
+                                    <rect x="10" y="50" width="180" height="70" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <text x="100" y="80" text-anchor="middle" font-size="15" font-weight="700" opacity=".75">ВИЕ</text>
+                                    <text x="100" y="104" text-anchor="middle" font-size="20">пишете заявка</text>
+                                </g>
+                                <g class="xp-a" data-at="1800">
+                                    <line class="flow-line" x1="196" y1="85" x2="326" y2="85" stroke="currentColor" stroke-width="2" marker-end="url(#ar3)"/>
+                                    <text x="261" y="72" text-anchor="middle" font-size="17">заявка</text>
+                                </g>
+                                <g class="xp-a" data-at="2600">
+                                    <rect class="on-red" x="330" y="30" width="240" height="110" fill="#DC4E40"/>
+                                    <text x="450" y="62" text-anchor="middle" font-size="15" font-weight="700" fill="#fff" style="fill:#fff">ИИ МОДЕЛ</text>
+                                    <text x="450" y="88" text-anchor="middle" font-size="17" style="fill:#fff">научен от много текстове</text>
+                                    <text x="450" y="112" text-anchor="middle" font-size="17" style="fill:#fff">съставя отговор</text>
+                                </g>
+                                <g class="xp-a" data-at="3800">
+                                    <line class="flow-line" x1="576" y1="85" x2="706" y2="85" stroke="currentColor" stroke-width="2" marker-end="url(#ar3)"/>
+                                    <text x="641" y="72" text-anchor="middle" font-size="17">отговор</text>
+                                </g>
+                                <g class="xp-a" data-at="4500">
+                                    <rect x="710" y="50" width="180" height="70" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    <text x="800" y="80" text-anchor="middle" font-size="15" font-weight="700" opacity=".75">ВИЕ</text>
+                                    <text x="800" y="104" text-anchor="middle" font-size="20">проверявате</text>
+                                </g>
+                                <g class="xp-a" data-at="5800">
+                                    <path class="flow-line" d="M800 126 V200 H100 V128" fill="none" stroke="currentColor" stroke-width="2" marker-end="url(#ar3)"/>
+                                    <text x="450" y="226" text-anchor="middle" font-size="18">поправяте и питате пак</text>
+                                </g>
+                                <g class="xp-a" data-at="7000">
+                                    <text x="450" y="170" text-anchor="middle" font-size="17" style="fill:#ff8d80">⚠ моделът не проверява фактите, затова греши с увереност</text>
+                                </g>
+                            </svg>
+                        </figure>
+                    </div>
+
+                    <div class="xp-scene" data-dur="8000" data-wait data-cap="ИИ пише убедително, но не знае вашите факти. Кликнете върху подчертаните твърдения.">
+                        <div class="xp-t xp-a" data-at="200">Но внимавайте: ИИ <em>греши с увереност</em></div>
+                        <div class="xp-bub ai xp-a" data-at="1000">Нашият салон е <span class="xp-hot">№1 в града<span class="xp-pop">Измислено ли е? Това е твърдение, което само вие можете да потвърдите.</span></span> и вече <span class="xp-hot">12 години<span class="xp-pop">ИИ не знае кога сте започнали. Проверете датите и числата.</span></span> предлага <span class="xp-hot">50% отстъпка всеки ден<span class="xp-pop">Невярна оферта в публикация може да ви навреди. Винаги проверявайте.</span></span>.</div>
+                        <div class="xp-hint-bar">👆 Кликнете върху подчертаните думи</div>
+                    </div>
+
+                    <div class="xp-scene" data-dur="9500" data-cap="Ще срещате ИИ по три начина: като асистент в чата, като агент, който върши задачи, и като вграден помощник в приложения, които вече ползвате.">
+                        <div class="xp-t xp-a" data-at="200">Три начина да срещате <em>ИИ</em></div>
+                        <div class="xp-row">
+                            <div class="xp-card xp-a" data-at="1200"><b>💬</b><h4>Асистент</h4><p>Колега в чата: питате и получавате отговор.</p></div>
+                            <div class="xp-card xp-a" data-at="3200"><b>🧑‍💼</b><h4>Агент</h4><p>Стажант: получава цел и върши стъпките сам.</p></div>
+                            <div class="xp-card xp-a" data-at="5200"><b>⚙️</b><h4>Вграден ИИ</h4><p>Автопилот в Canva, имейл, реклами.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="xp-scene" data-dur="7000" data-cap="В следващите слайдове ще опитате всичко сами, а накрая ще направите кратък одит на онлайн присъствието си.">
+                        <div class="xp-t xp-a" data-at="200">Какво <em>следва</em></div>
+                        <div class="xp-flow">
+                            <div class="xp-step xp-a" data-at="1000"><b>💡</b>Какво е ИИ асистент</div>
+                            <div class="xp-arrow xp-a" data-at="1600">→</div>
+                            <div class="xp-step xp-a" data-at="2200"><b>🧰</b>Кои инструменти</div>
+                            <div class="xp-arrow xp-a" data-at="2800">→</div>
+                            <div class="xp-step xp-a" data-at="3400"><b>✅</b>Как да изберете</div>
+                            <div class="xp-arrow xp-a" data-at="4000">→</div>
+                            <div class="xp-step xp-a" data-at="4600"><b>📝</b>Вашата задача</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div data-xp-controls></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3: What is an AI assistant -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Основи</div>
+            <h2>Какво е ИИ асистент?</h2>
+            <div class="divider"></div>
+            <div class="split">
+                <div>
+                    <p class="lead">ИИ асистентът е програма, на която <strong>пишете на обикновен български, като на колега</strong>: „напиши…“, „обясни…“, „сравни…“. Тя отговаря за секунди с текст, таблица или идея.</p>
+                    <p class="note"><strong>Как работи, без техническите подробности:</strong> програмата е „чела“ огромно количество текстове и е научила как обикновено се изграждат отговорите. Затова пише гладко и убедително.</p>
+                    <p class="note"><strong>Какво следва от това:</strong> тя не „знае“ нещата като човек. Понякога съставя отговор, който звучи правилно, но е грешен: невярна дата, измислена цитата, несъществуващ закон. Затова фактите и числата винаги се проверяват.</p>
+                    <div class="try"><strong>Запомнете:</strong> ИИ е бърз и неуморен помощник, а не експерт, на когото се вярва безрезервно. Вие давате задачата и вие одобрявате резултата.</div>
+                </div>
+                <div class="chat auto" data-p="sme">
+                    <div class="chat-title">Пример за разговор · на живо</div>
+                    <div class="typing" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <div class="msg you"><small>Вие</small>Напиши кратък пост за Facebook за козметичен салон във Велико Търново: 20% отстъпка за маникюр през ноември. Тонът да е топъл, до 60 думи.</div>
+                    <div class="msg ai"><small>ИИ асистент</small>Ноември е месецът да подарите на себе си малко грижа ✨ През целия месец маникюрът при нас е с 20% отстъпка. Идвате уморени, излизате с нови нокти и по-добро настроение. Запазете час на [телефон] или с лично съобщение.</div>
+                    <div class="msg you"><small>Вие</small>По-кратко и добави, че работим и в събота.</div>
+                    <button type="button" class="replay">↻ Пусни отново</button>
+                </div>
+                <div class="chat auto" data-p="public">
+                    <div class="chat-title">Пример за разговор · на живо</div>
+                    <div class="typing" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <div class="msg you"><small>Вие</small>Обясни на разбираем език за граждани: общинският съвет е решил от 1 януари да се промени графикът за сметосъбиране. Напиши съобщение до 60 думи, спокоен и учтив тон.</div>
+                    <div class="msg ai"><small>ИИ асистент</small>Уважаеми съграждани, от 1 януари графикът за извозване на смет се променя. Новите дни за вашия район ще намерите на сайта на общината и на информационните табла. При въпроси ни пишете или звънете на [телефон].</div>
+                    <div class="msg you"><small>Вие</small>Добави и как да подадат сигнал при пропуснато извозване.</div>
+                    <button type="button" class="replay">↻ Пусни отново</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4: What can you ask -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Възможности</div>
+            <h2>Какво можете да му поискате</h2>
+            <div class="divider"></div>
+            <p class="lead">ИИ върши седем вида работа. <span class="hint">Кликнете върху всяка карта</span>, за да видите заявка, която може да напишете още днес.</p>
+            <div class="rev-grid">
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">✍️</span>Пише и преработва текст</div><div class="rev-a"><i>„Преработи този имейл да звучи по-учтиво и да е наполовина по-къс.“</i></div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">🔎</span>Проучва тема</div><div class="rev-a"><i>„Сравни три начина да рекламирам малък магазин онлайн, с плюсове и минуси.“</i></div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📊</span>Анализира таблици и документи</div><div class="rev-a">Качвате файл с продажби и питате: <i>„Кои 3 неща се виждат в тези числа?“</i></div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">🎨</span>Създава изображения</div><div class="rev-a"><i>„Нарисувай светъл банер за есенна промоция, без текст върху него.“</i></div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">🎬</span>Създава видео и звук</div><div class="rev-a">Кратък клип от описание, субтитри към видео, озвучаване на текст.</div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">⚙️</span>Автоматизира повтарящи се задачи</div><div class="rev-a"><i>„Когато дойде запитване по имейл, запиши го в таблица и ми прати известие.“</i></div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">🤖</span>Действа като агент</div><div class="rev-a">Получава цел <i>(„намери ми 10 местни фирми за партньорство и подготви писма“)</i>, върши стъпките сам и чака вашето одобрение.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5: Assistants and how to start -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Инструменти · 1 от 2</div>
+            <h2>Универсалните асистенти: откъде да започнете</h2>
+            <div class="divider"></div>
+            <div class="split">
+                <div>
+                    <p class="lead">Това са програмите за писане, идеи, обяснения и анализ. Всички работят на български и имат <strong>безплатен план с ограничения</strong>. Платените планове дават повече възможности и по-малко лимити.</p>
+                    <dl class="term-list" style="grid-template-columns:1fr;">
+                        <div><dt>ChatGPT <span class="mono" style="font-weight:400;font-size:12px;">chatgpt.com</span></dt><dd>Най-известният. Универсален: текст, изображения, анализ на файлове.</dd></div>
+                        <div><dt>Claude <span class="mono" style="font-weight:400;font-size:12px;">claude.ai</span></dt><dd>Силен в дълги текстове и четене на документи. Пише естествено.</dd></div>
+                        <div><dt>Gemini <span class="mono" style="font-weight:400;font-size:12px;">gemini.google.com</span></dt><dd>От Google; удобен, ако ползвате Gmail, Документи и Таблици.</dd></div>
+                        <div><dt>Microsoft Copilot <span class="mono" style="font-weight:400;font-size:12px;">copilot.microsoft.com</span></dt><dd>От Microsoft; удобен, ако работите с Word, Excel и Outlook.</dd></div>
+                    </dl>
+                </div>
+                <div>
+                    <h3>Първи стъпки (5 минути)</h3>
+                    <ol class="steps">
+                        <li>Отворете един от адресите и влезте с имейл или Google акаунт.</li>
+                        <li>В полето най-долу напишете заявка като в примера от предишния слайд.</li>
+                        <li>Прочетете отговора и напишете следваща заявка: „по-кратко“, „по-формално“, „добави пример“.</li>
+                        <li>Опитайте същата заявка в друг асистент и сравнете.</li>
+                    </ol>
+                    <div class="try"><strong>Не е нужно да избирате „най-добрия“.</strong> Разликите между тях са малки за ежедневни задачи. Изберете един и го научете добре.</div>
+                </div>
+            </div>
+            <p class="checked">Възможностите и условията на безплатните планове се менят. Последна проверка: октомври 2026.</p>
+        </div>
+    </div>
+
+    <!-- 6: Other tool types -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Инструменти · 2 от 2</div>
+            <h2>Специализирани инструменти: за какво ви трябват</h2>
+            <div class="divider"></div>
+            <p class="lead">Освен универсалните асистенти има програми, направени за една задача. Те се добавят по-късно, когато усетите нужда. <span class="hint">Изберете какво искате да направите</span> и ще видите кой вид инструмент ви трябва.</p>
+            <div class="chips" id="goalChips" role="group" aria-label="Какво искате да направите?">
+                <button type="button" class="chip" data-goal="research">🔎 Да проуча тема или да обобщя документи</button>
+                <button type="button" class="chip" data-goal="design">🎨 Да направя банер или пост</button>
+                <button type="button" class="chip" data-goal="video">🎬 Да направя кратко видео</button>
+                <button type="button" class="chip" data-goal="automate">⚙️ Да автоматизирам повтарящо се</button>
+                <button type="button" class="chip" data-goal="ads">📣 Да пусна реклама</button>
+            </div>
+            <div class="picker-result" id="goalResult" aria-live="polite"><p class="picker-empty">Изберете една от задачите отгоре.</p></div>
+            <p class="checked">Списъкът е с примери, не е препоръка. Последна проверка: октомври 2026.</p>
+        </div>
+    </div>
+
+    <!-- 7: How to choose -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Избор</div>
+            <h2>Как да изберете инструмент: 5 въпроса</h2>
+            <div class="divider"></div>
+            <ol class="steps">
+                <li><strong>Каква е задачата?</strong> Започнете от резултата, който искате: текст, картинка, анализ или автоматизация. Инструментът е вторичен.</li>
+                <li><strong>Работи ли добре на български?</strong> Тествайте с реален текст от вашата работа, преди да разчитате на него. Някои инструменти грешат падежи и термини.</li>
+                <li><strong>Какво става с данните ми?</strong> Много безплатни планове могат да използват вашите заявки за подобряване на системата. Не въвеждайте лични данни, клиентски списъци и вътрешни документи, освен ако условията изрично го позволяват (повече в Тема 7).</li>
+                <li><strong>Колко струва?</strong> Започнете безплатно. Плащайте само за инструмент, който ползвате всяка седмица.</li>
+                <li><strong>Мога ли да проверя резултата?</strong> По-добре е инструмент, който показва източници и позволява редакция, отколкото такъв, който дава готов резултат без обяснение.</li>
+            </ol>
+            <div class="example" data-p="sme"><strong>За бизнеса:</strong> в началото един универсален асистент и Canva покриват повечето нужди. Добавяйте инструменти един по един.</div>
+            <div class="example" data-p="public"><strong>За публичната организация:</strong> преди да ползвате инструмент с данни на граждани или служебна информация, проверете вътрешните правила на организацията и защитата на личните данни.</div>
+            <div class="quiz">
+                <div class="quiz-title">Проверете се</div>
+                <div class="quiz-q">Кое е най-безопасно да въведете в безплатен ИИ инструмент?</div>
+                <button type="button" class="quiz-opt" data-fb="Не. Имейлите и телефоните на клиенти са лични данни. Не ги въвеждайте в безплатни инструменти.">Таблица с имейли и телефони на клиентите ви</button>
+                <button type="button" class="quiz-opt" data-right data-fb="Вярно. Информацията, която вече е публична, носи най-малък риск. Пак проверявайте условията на инструмента.">Описание на услугите ви, което вече е публично на сайта</button>
+                <button type="button" class="quiz-opt" data-fb="Не. Вътрешните договори и цени са поверителни. Не ги въвеждайте без изрично разрешение.">Вътрешен договор с условия и цени</button>
+                <div class="quiz-fb" aria-live="polite"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 8: Assistant / agent / embedded -->
+    <div class="slide bg-blue">
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Тенденция</div>
+            <h2>Три начина, по които ще срещате ИИ</h2>
+            <div class="divider"></div>
+            <div class="cards">
+                <div class="card"><h3>1. Асистент: „колега в чата“</h3><p>Вие питате, той отговаря, вие поправяте. Всяка стъпка е ваша. Започнете оттук.</p></div>
+                <div class="card"><h3>2. Агент: „стажант, който върши задача“</h3><p>Давате цел, а той сам търси, събира информация и подготвя чернова. Вие одобрявате, преди нещо да бъде изпратено или публикувано.</p></div>
+                <div class="card"><h3>3. Вграден ИИ: „автопилот в приложението“</h3><p>Canva, имейл, рекламни системи вече имат ИИ, който работи по подразбиране. Трябва да знаете какво решава вместо вас.</p></div>
+            </div>
+            <figure class="diagram">
+                <svg viewBox="0 0 910 275" role="img" aria-label="Кой върши всяка стъпка при асистент, агент и вграден ИИ: при асистента вие решавате всяка стъпка, при агента ИИ върши средните стъпки сам, а при вградения ИИ решението се взема в приложението.">
+                    <defs><marker id="ar1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><polygon points="0,0 10,5 0,10" fill="currentColor"/></marker></defs>
+
+                    <text x="0" y="46" font-size="15" font-weight="700">Асистент</text>
+                    <text x="0" y="64" font-size="11" opacity=".8">вие решавате</text><text x="0" y="78" font-size="11" opacity=".8">всяка стъпка</text>
+                    <g><rect x="140" y="26" width="128" height="48" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="204" y="45" text-anchor="middle" font-size="10.5" font-weight="700" opacity=".8">ВИЕ</text><text x="204" y="63" text-anchor="middle" font-size="12.5">пишете заявка</text></g>
+                    <g class="on-red"><rect x="296" y="26" width="128" height="48" fill="#DC4E40"/><text x="360" y="45" text-anchor="middle" font-size="10.5" font-weight="700">ИИ</text><text x="360" y="63" text-anchor="middle" font-size="12.5">отговаря</text></g>
+                    <g><rect x="452" y="26" width="128" height="48" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="516" y="45" text-anchor="middle" font-size="10.5" font-weight="700" opacity=".8">ВИЕ</text><text x="516" y="63" text-anchor="middle" font-size="12.5">поправяте</text></g>
+                    <g class="on-red"><rect x="608" y="26" width="128" height="48" fill="#DC4E40"/><text x="672" y="45" text-anchor="middle" font-size="10.5" font-weight="700">ИИ</text><text x="672" y="63" text-anchor="middle" font-size="12.5">нов отговор</text></g>
+                    <line x1="270" y1="50" x2="292" y2="50" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar1)"/>
+                    <line x1="426" y1="50" x2="448" y2="50" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar1)"/>
+                    <line x1="582" y1="50" x2="604" y2="50" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar1)"/>
+
+                    <text x="0" y="136" font-size="15" font-weight="700">Агент</text>
+                    <text x="0" y="154" font-size="11" opacity=".8">ИИ действа сам,</text><text x="0" y="168" font-size="11" opacity=".8">вие одобрявате</text>
+                    <rect x="288" y="108" width="456" height="64" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="5 4" opacity=".7"/>
+                    <text x="296" y="102" font-size="11" opacity=".9">ИИ върши тези стъпки без вас</text>
+                    <g><rect x="140" y="116" width="128" height="48" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="204" y="135" text-anchor="middle" font-size="10.5" font-weight="700" opacity=".8">ВИЕ</text><text x="204" y="153" text-anchor="middle" font-size="12.5">давате цел</text></g>
+                    <g class="on-red"><rect x="296" y="116" width="128" height="48" fill="#DC4E40"/><text x="360" y="135" text-anchor="middle" font-size="10.5" font-weight="700">ИИ</text><text x="360" y="153" text-anchor="middle" font-size="12.5">търси</text></g>
+                    <g class="on-red"><rect x="452" y="116" width="128" height="48" fill="#DC4E40"/><text x="516" y="135" text-anchor="middle" font-size="10.5" font-weight="700">ИИ</text><text x="516" y="153" text-anchor="middle" font-size="12.5">събира</text></g>
+                    <g class="on-red"><rect x="608" y="116" width="128" height="48" fill="#DC4E40"/><text x="672" y="135" text-anchor="middle" font-size="10.5" font-weight="700">ИИ</text><text x="672" y="153" text-anchor="middle" font-size="12.5">прави чернова</text></g>
+                    <g><rect x="764" y="116" width="128" height="48" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="828" y="135" text-anchor="middle" font-size="10.5" font-weight="700" opacity=".8">ВИЕ</text><text x="828" y="153" text-anchor="middle" font-size="12.5">одобрявате</text></g>
+                    <line x1="270" y1="140" x2="292" y2="140" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar1)"/>
+                    <line x1="426" y1="140" x2="448" y2="140" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar1)"/>
+                    <line x1="582" y1="140" x2="604" y2="140" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar1)"/>
+                    <line x1="738" y1="140" x2="760" y2="140" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar1)"/>
+
+                    <text x="0" y="226" font-size="15" font-weight="700">Вграден ИИ</text>
+                    <text x="0" y="244" font-size="11" opacity=".8">ИИ решава в</text><text x="0" y="258" font-size="11" opacity=".8">приложението</text>
+                    <g><rect x="140" y="206" width="128" height="48" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="204" y="225" text-anchor="middle" font-size="10.5" font-weight="700" opacity=".8">ВИЕ</text><text x="204" y="243" text-anchor="middle" font-size="12.5">цел и бюджет</text></g>
+                    <g class="on-red"><rect x="296" y="206" width="128" height="48" fill="#DC4E40"/><text x="360" y="225" text-anchor="middle" font-size="10.5" font-weight="700">ИИ В ПЛАТФОРМАТА</text><text x="360" y="243" text-anchor="middle" font-size="12.5">избира аудитория</text></g>
+                    <g><rect x="452" y="206" width="128" height="48" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="516" y="225" text-anchor="middle" font-size="10.5" font-weight="700" opacity=".8">ВИЕ</text><text x="516" y="243" text-anchor="middle" font-size="12.5">виждате резултата</text></g>
+                    <line x1="270" y1="230" x2="292" y2="230" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar1)"/>
+                    <line x1="426" y1="230" x2="448" y2="230" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#ar1)"/>
+                    <text x="610" y="226" font-size="12" opacity=".9">Не винаги се вижда защо</text>
+                    <text x="610" y="243" font-size="12" opacity=".9">е избрано точно това.</text>
+                </svg>
+                <figcaption>Червените стъпки са на ИИ, контурните са ваши. Колкото повече стъпки са червени, толкова по-малко вие виждате и решавате.</figcaption>
+            </figure>
+            <p class="lead" style="margin-top:20px;"><strong>Правило:</strong> колкото повече самостоятелност има инструментът, толкова по-ясни граници и по-строго одобрение са нужни.</p>
+            <div class="quiz">
+                <div class="quiz-title">Проверете се</div>
+                <div class="quiz-q">Давате задача: „Намери 10 местни фирми и подготви писма за партньорство. Не ги изпращай, докато не ги одобря.“ Кой формат е това?</div>
+                <button type="button" class="quiz-opt" data-fb="Не съвсем. Асистентът отговаря на всяка ваша заявка поотделно, а тук се изпълняват няколко стъпки самостоятелно.">Асистент</button>
+                <button type="button" class="quiz-opt" data-right data-fb="Вярно. Агентът получава цел и сам върши стъпките, а вие одобрявате резултата.">Агент</button>
+                <button type="button" class="quiz-opt" data-fb="Не. Вграденият ИИ е част от приложение (напр. Canva) и работи в него, без вие да давате такава цел.">Вграден ИИ в приложение</button>
+                <div class="quiz-fb" aria-live="polite"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 9: Marketing process -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Маркетинг</div>
+            <h2>Къде влиза ИИ в маркетинга</h2>
+            <div class="divider"></div>
+            <p class="lead">Маркетингът е поредица от пет стъпки. ИИ помага във всяка от тях, а в следващите теми на курса ще ги разгледаме една по една.</p>
+            <ol class="steps">
+                <li><strong>Разбирам кои са клиентите ми</strong> (Тема 3): ИИ помага да опишете типични клиенти и да сравните конкурентите.</li>
+                <li><strong>Планирам</strong> (Тема 3): седмичен или месечен план за публикации.</li>
+                <li><strong>Създавам</strong> (Теми 2 и 4): текстове, картинки, кратки видеа.</li>
+                <li><strong>Разпространявам</strong> (Тема 5): реклама и автоматични съобщения.</li>
+                <li><strong>Измервам</strong> (Тема 6): кое е проработило и колко е струвало.</li>
+            </ol>
+            <div class="example" data-p="sme"><strong>Пример (козметичен салон):</strong> ИИ предлага план от 5 поста за седмицата, пише текстовете, Canva прави визиите, а накрая сравнявате кой пост е довел най-много запитвания.</div>
+            <div class="example" data-p="public"><strong>Пример (община):</strong> ИИ превежда решение на съвета на разбираем език и подготвя серия публикации и по-проста версия за хора с по-ниска дигитална грамотност. Служител прочита и одобрява всичко преди публикуване.</div>
+        </div>
+    </div>
+
+    <!-- 10: Search changed -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Промяна в търсенето</div>
+            <h2>Хората вече питат ИИ, а не само търсят в Google</h2>
+            <div class="divider"></div>
+            <div class="split">
+                <div>
+                    <p class="lead">Търсачките показват готов отговор над списъка с резултати, а много хора питат директно чат асистент, например „къде в Габрово да поправя телефон?“. Асистентът избира няколко източника и ги цитира.</p>
+                    <p class="note"><strong>Какво значи това за вас:</strong> ако вашият сайт и профили имат ясна и точна информация, по-вероятно е ИИ да ви посочи. Тази работа се нарича „оптимизация за ИИ отговори“ (на английски GEO).</p>
+                </div>
+                <div>
+                    <h3>Четири неща, които правите още сега</h3>
+                    <ol class="steps">
+                        <li><strong>Ясни отговори:</strong> страница с въпроси и кратки отговори (цени, условия, работно време).</li>
+                        <li><strong>Еднакви данни навсякъде:</strong> адрес, телефон и услуги да съвпадат в сайта, Google профила и социалните мрежи.</li>
+                        <li><strong>Доверие:</strong> отзиви, споменавания, реални имена и автори.</li>
+                        <li><strong>Актуалност:</strong> преглеждайте основните страници всяко тримесечие.</li>
+                    </ol>
+                </div>
+            </div>
+            <figure class="diagram">
+                <svg viewBox="0 0 880 250" role="img" aria-label="Преди: човек търси в Google, получава списък от връзки и кликва върху вашия сайт. Сега: човек пита ИИ, който събира отговор от няколко източника и ги цитира; вашият сайт е един от цитираните източници.">
+                    <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><polygon points="0,0 10,5 0,10" fill="currentColor"/></marker></defs>
+
+                    <text x="0" y="55" font-size="15" font-weight="700">Преди</text>
+                    <g><rect x="110" y="25" width="170" height="50" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="195" y="45" text-anchor="middle" font-size="10.5" font-weight="700" opacity=".8">ЧОВЕК</text><text x="195" y="63" text-anchor="middle" font-size="13">търси в Google</text></g>
+                    <g><rect x="400" y="25" width="170" height="50" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="485" y="45" text-anchor="middle" font-size="10.5" font-weight="700" opacity=".8">GOOGLE</text><text x="485" y="63" text-anchor="middle" font-size="13">списък от връзки</text></g>
+                    <g><rect x="690" y="25" width="170" height="50" fill="none" stroke="#DC4E40" stroke-width="2"/><text x="775" y="45" text-anchor="middle" font-size="10.5" font-weight="700" style="fill:#DC4E40">ВАШИЯТ САЙТ</text><text x="775" y="63" text-anchor="middle" font-size="13">един от 10 резултата</text></g>
+                    <line x1="284" y1="50" x2="396" y2="50" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar2)"/><text x="340" y="42" text-anchor="middle" font-size="12">въпрос</text>
+                    <line x1="574" y1="50" x2="686" y2="50" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar2)"/><text x="630" y="42" text-anchor="middle" font-size="12">клик</text>
+
+                    <text x="0" y="155" font-size="15" font-weight="700">Сега</text>
+                    <g><rect x="110" y="125" width="170" height="50" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="195" y="145" text-anchor="middle" font-size="10.5" font-weight="700" opacity=".8">ЧОВЕК</text><text x="195" y="163" text-anchor="middle" font-size="13">пита ИИ</text></g>
+                    <g class="on-red"><rect x="400" y="125" width="170" height="50" fill="#DC4E40"/><text x="485" y="145" text-anchor="middle" font-size="10.5" font-weight="700">ИИ ОТГОВОР</text><text x="485" y="163" text-anchor="middle" font-size="13">събира и обобщава</text></g>
+                    <g><rect x="690" y="125" width="170" height="50" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="775" y="145" text-anchor="middle" font-size="10.5" font-weight="700" opacity=".8">ЧОВЕК</text><text x="775" y="163" text-anchor="middle" font-size="13">чете отговора</text></g>
+                    <line x1="284" y1="150" x2="396" y2="150" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar2)"/><text x="340" y="142" text-anchor="middle" font-size="12">въпрос</text>
+                    <line x1="574" y1="150" x2="686" y2="150" stroke="currentColor" stroke-width="1.5" marker-end="url(#ar2)"/><text x="630" y="142" text-anchor="middle" font-size="12">отговор</text>
+
+                    <g><rect x="244" y="205" width="150" height="32" fill="none" stroke="currentColor" stroke-width="1" opacity=".8"/><text x="319" y="226" text-anchor="middle" font-size="12.5">друг източник</text></g>
+                    <g><rect x="408" y="205" width="150" height="32" fill="none" stroke="#DC4E40" stroke-width="2"/><text x="483" y="226" text-anchor="middle" font-size="12.5" font-weight="700" style="fill:#DC4E40">вашият сайт</text></g>
+                    <g><rect x="572" y="205" width="150" height="32" fill="none" stroke="currentColor" stroke-width="1" opacity=".8"/><text x="647" y="226" text-anchor="middle" font-size="12.5">друг източник</text></g>
+                    <line x1="319" y1="203" x2="440" y2="178" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar2)"/>
+                    <line x1="483" y1="203" x2="483" y2="178" stroke="#DC4E40" stroke-width="2" marker-end="url(#ar2)"/>
+                    <line x1="647" y1="203" x2="530" y2="178" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar2)"/>
+                    <text x="494" y="194" font-size="12">цитира</text>
+                </svg>
+                <figcaption>Преди хората получаваха списък и сами избираха къде да кликнат. Сега ИИ често събира отговор от няколко източника и ги цитира. Ако не сте сред цитираните, не сте в отговора.</figcaption>
+            </figure>
+            <div class="example" data-p="sme"><strong>МСП:</strong> най-важното е Google профилът на бизнеса, отзивите и сайт с ясни цени и услуги.</div>
+            <div class="example" data-p="public"><strong>Публична организация:</strong> официалният сайт трябва да е надеждният източник за услуги, срокове и такси, за да не се цитират грешни данни от трети страни.</div>
+            <p class="checked">Ефектът върху посещаемостта е различен по сектори и данните са предимно от доставчици на SEO инструменти. Проверявайте собствената си статистика. Последна проверка: октомври 2026.</p>
+        </div>
+    </div>
+
+    <!-- 11: Task -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Практическа задача · 15 мин</div>
+            <h2>ИИ одит на вашето онлайн присъствие</h2>
+            <div class="divider"></div>
+            <div class="split">
+                <div>
+                    <div data-progress>
+                        <ul class="checklist">
+                            <li><label><input type="checkbox"><span>Отворете асистент (ChatGPT, Claude, Gemini или Copilot) и влезте в него.</span></label></li>
+                            <li><label><input type="checkbox"><span>Копирайте промпта отдясно с бутона „Копирай“ и сложете вашите данни на мястото на частите в [скоби].</span></label></li>
+                            <li><label><input type="checkbox"><span>Прочетете отговора. Ако асистентът ви зададе уточняващи въпроси, отговорете.</span></label></li>
+                            <li><label><input type="checkbox"><span>Проверете поне 3 факта от отговора (например в сайта си или в Google).</span></label></li>
+                            <li><label><input type="checkbox"><span>Запишете кои 2 инструмента ще опитате първи тази седмица.</span></label></li>
+                        </ul>
+                        <div class="progress"><div></div></div>
+                        <div class="progress-label"></div>
+                    </div>
+                    <div class="try"><strong>Добър резултат изглежда така:</strong> списък с конкретни пропуски („няма цени на сайта“, „Google профилът е с остарял телефон“), таблица с инструменти и план по дни. Ако отговорът е общ, добавете още подробности за вашата дейност и поискайте „по-конкретно“.</div>
+                </div>
+                <div>
+                    <div class="prompt-box" data-p="sme">Ти си консултант по дигитален маркетинг за малък бизнес в България.
+Бизнес: [какво продавате, на кого, в кой град]
+Канали, които ползвам: [сайт, Facebook, Instagram, Google профил...]
+Задача: направи кратък одит на онлайн присъствието ми и ми дай:
+1) 5 най-важни проблема или пропуски,
+2) таблица "задача → вид ИИ инструмент → безплатен вариант за старт",
+3) план за първите 7 дни (по 20 минути на ден).
+Ако ти липсва информация, задай ми до 3 уточняващи въпроса, преди да отговориш.
+Пиши на български, без излишни английски термини.</div>
+                    <div class="prompt-box" data-p="public">Ти си консултант по комуникация за публична организация в България.
+Организация: [вид, например община, училище, НПО] и [основни услуги/дейности]
+Канали, които ползваме: [сайт, Facebook, Viber/информационни съобщения...]
+Задача: направи кратък одит на онлайн комуникацията ни и ми дай:
+1) 5 най-важни проблема или пропуски (яснота, достъпност, актуалност),
+2) таблица "задача → вид ИИ инструмент → какви данни НЕ бива да въвеждаме",
+3) план за първите 7 дни (по 20 минути на ден).
+Ако ти липсва информация, задай ми до 3 уточняващи въпроса, преди да отговориш.
+Не използвай лични данни. Пиши на български, на разбираем за гражданите език.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 12: Glossary + summary -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Обобщение</div>
+            <h2>Какво научихме и малък речник</h2>
+            <div class="divider"></div>
+            <ol class="steps">
+                <li>ИИ асистентът е помощник, който пише, проучва, анализира и създава. Грешките са възможни, затова вие проверявате.</li>
+                <li>Започнете с един универсален асистент и добавяйте специализирани инструменти при нужда.</li>
+                <li>Избирайте по задача, език, данни, цена и възможност за проверка.</li>
+                <li>Хората вече питат ИИ, затова точната и ясна информация в сайта и профилите ви работи за вас.</li>
+            </ol>
+            <p class="lead" style="margin-top:14px;"><span class="hint">Малък речник: помислете какво значи думата, после кликнете</span></p>
+            <div class="rev-grid">
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">💬</span>Промпт</div><div class="rev-a">Заявката, която пишете към ИИ.</div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">🧑‍💻</span>Асистент</div><div class="rev-a">Програма за разговор, в която пишете и получавате отговор.</div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">🤖</span>Агент</div><div class="rev-a">ИИ, който сам изпълнява няколко стъпки към зададена цел.</div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">🌀</span>Халюцинация</div><div class="rev-a">Когато ИИ измисля неверен факт, но го представя убедително.</div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📍</span>GEO</div><div class="rev-a">Оптимизация, за да ви посочват и цитират ИИ отговорите.</div></div>
+                <div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">⚙️</span>Автоматизация</div><div class="rev-a">Правило „когато стане А, направи Б“ без ръчна работа.</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 13: Closing interactive video -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Интерактивно видео · ≈ 30 сек</div>
+            <h2>Обобщение и първата ви седмица</h2>
+            <div class="xp-wrap">
+                <div class="xp">
+
+                    <div class="xp-scene" data-dur="8500" data-cap="Запомнете основното: ИИ е помощник, не експерт. Има седем вида работа, пет въпроса за избор на инструмент, а ясната информация във вашия сайт работи и за ИИ.">
+                        <div class="xp-t xp-a" data-at="200">Какво <em>научихте</em></div>
+                        <ul class="xp-list">
+                            <li class="xp-a" data-at="1000">ИИ е помощник, а не експерт</li>
+                            <li class="xp-a" data-at="2300">Върши 7 вида работа</li>
+                            <li class="xp-a" data-at="3600">Инструментът се избира с 5 въпроса</li>
+                            <li class="xp-a" data-at="4900">Точните данни ви правят видими и за ИИ</li>
+                        </ul>
+                    </div>
+
+                    <div class="xp-scene" data-dur="8000" data-cap="Работният процес е прост: давате задача, ИИ предлага чернова, вие проверявате и едва тогава публикувате. Последната проверка винаги е ваша.">
+                        <div class="xp-t xp-a" data-at="200">Вашият работен <em>процес</em></div>
+                        <div class="xp-flow">
+                            <div class="xp-step xp-a" data-at="1000"><b>🎯</b>Задача</div>
+                            <div class="xp-arrow xp-a" data-at="1700">→</div>
+                            <div class="xp-step xp-a" data-at="2400"><b>🤖</b>Чернова от ИИ</div>
+                            <div class="xp-arrow xp-a" data-at="3100">→</div>
+                            <div class="xp-step xp-a" data-at="3800"><b>🔍</b>Вашата проверка</div>
+                            <div class="xp-arrow xp-a" data-at="4500">→</div>
+                            <div class="xp-step xp-a" data-at="5200"><b>🚀</b>Публикуване</div>
+                        </div>
+                    </div>
+
+                    <div class="xp-scene" data-dur="6500" data-wait data-cap="Кликнете върху всеки ден, за да видите малка стъпка за вашата първа седмица. Следващата тема ще ви научи как да пишете заявки, които дават по-добри резултати.">
+                        <div class="xp-t xp-a" data-at="200">Първата ви <em>седмица</em></div>
+                        <div class="xp-row xp-a" data-at="900">
+                            <div class="xp-day">Пон<small>Направете одита от задачата</small></div>
+                            <div class="xp-day">Вто<small>Пробвайте втори асистент</small></div>
+                            <div class="xp-day">Сря<small>Опитайте Canva или друг инструмент</small></div>
+                            <div class="xp-day">Чет<small>Поправете една грешка от одита</small></div>
+                            <div class="xp-day">Пет<small>Прегледайте какво сте научили</small></div>
+                        </div>
+                        <div class="xp-hint-bar">👆 Кликнете върху дните</div>
+                    </div>
+
+                </div>
+                <div data-xp-controls></div>
+            </div>
+            <button type="button" class="btn" onclick="parent.postMessage({type:'next-section-arrow'}, '*')">Следва Тема 2: Как се работи с ИИ &#8594;</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="nav-bar">
+    <div class="nav-progress"></div>
+    <div class="nav-info mono"></div>
+    <div class="nav-buttons">
+        <button class="nav-btn" data-nav="prev" aria-label="Назад">&#8592;</button>
+        <button class="nav-btn" data-nav="next" aria-label="Напред">&#8594;</button>
+    </div>
+</div>
+<script src="shared.js"></script>
+<script>
+    // Goal picker (slide 6): static, curated recommendations. Last checked October 2026.
+    (function () {
+        var GOALS = {
+            research: { t: 'Проучване и работа с документи', tools: ['Perplexity', 'NotebookLM', 'режим „Deep research“ в асистентите'], why: 'Дават отговори с посочени източници, а NotebookLM отговаря само по документите, които му дадете.', ex: 'Качвате 5 доклада и питате: „Какво е общото между тях?“' },
+            design: { t: 'Изображения и дизайн', tools: ['Canva', 'Adobe Firefly', 'генериране на изображения в асистентите'], why: 'Описвате желания резултат и получавате готов дизайн, който редактирате.', ex: 'В Canva пишете „пост за есенна промоция в топли цветове“ и избирате от предложените варианти.' },
+            video: { t: 'Видео и звук', tools: ['Runway', 'Veo', 'CapCut', 'ElevenLabs'], why: 'Правят кратки клипове, субтитри и озвучаване. Качеството и условията се менят бързо, затова опитайте безплатно първо.', ex: '15-секунден клип за Instagram от снимка и кратко описание.' },
+            automate: { t: 'Автоматизации и агенти', tools: ['Zapier', 'Make', 'n8n'], why: 'Свързват приложения по правилото „когато стане А, направи Б“, без ръчна работа.', ex: 'Ново запитване от сайта → запис в таблица → известие на телефона.' },
+            ads: { t: 'ИИ в рекламните платформи', tools: ['Meta Advantage+', 'Google Ads'], why: 'Системите сами избират аудитория и варианти на рекламата. Вие задавате цел и бюджет и следите резултатите.', ex: 'Задавате бюджет и цел „запитвания“, а платформата намира подходящите хора (виж Тема 5).' }
+        };
+        var res = document.getElementById('goalResult');
+        function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+        Array.prototype.forEach.call(document.querySelectorAll('#goalChips .chip'), function (chip) {
+            chip.addEventListener('click', function () {
+                Array.prototype.forEach.call(document.querySelectorAll('#goalChips .chip'), function (c) { c.classList.toggle('on', c === chip); });
+                var g = GOALS[chip.dataset.goal];
+                res.className = 'picker-result';
+                void res.offsetWidth;   // restart the fade-in animation
+                res.className = 'picker-result fresh';
+                res.innerHTML = '<h3>' + esc(g.t) + '</h3><div class="tools">' + g.tools.map(function (t) { return '<span class="tool">' + esc(t) + '</span>'; }).join('') + '</div><p>' + esc(g.why) + '</p><p><strong>Пример:</strong> ' + esc(g.ex) + '</p>';
+            });
+        });
+    })();
+</script>
+</body>
+</html>

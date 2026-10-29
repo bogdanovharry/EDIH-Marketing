@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Старт — Модул IV</title>
+    <link rel="stylesheet" href="shared.css">
+</head>
+<body data-deck="00-start">
+<div class="deck">
+
+    <!-- 1: Welcome -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag anim-up">Модул IV · Самостоятелно обучение</div>
+            <h1 class="anim-up anim-up-d1">ИИ в работата ви и в дигиталния маркетинг</h1>
+            <div class="divider anim-up anim-up-d2"></div>
+            <p class="subtitle anim-up anim-up-d3">
+                Научавате какво може ИИ днес, кои инструменти да ползвате за кои задачи и как да ги приложите
+                в маркетинга на вашия бизнес или организация. Учите със собствено темпо — видео, слайдове и кратка практическа задача във всяка тема.
+            </p>
+            <div class="cards anim-up anim-up-d3">
+                <div class="card"><div class="num">7</div><h3>теми</h3><p>≈ 3–4 часа общо; може да спирате и да продължавате по-късно.</p></div>
+                <div class="card blue"><div class="num">▶</div><h3>Видео + слайдове</h3><p>5–10 минути видео и слайдове за всяка тема.</p></div>
+                <div class="card"><div class="num">✎</div><h3>Практика</h3><p>Във всяка тема правите нещо реално за вашата дейност.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2: Profile -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Персонализация</div>
+            <h2>Кой сте вие?</h2>
+            <div class="divider"></div>
+            <p class="subtitle">Изберете профил — примерите, промптовете и ограниченията ще са съобразени с него. Можете да го смените по всяко време от менюто.</p>
+            <div class="profile-options" role="radiogroup" aria-label="Профил">
+                <button type="button" class="profile-option" data-profile="sme" role="radio" aria-checked="false">
+                    <h3>Малък и среден бизнес</h3>
+                    <p>Магазин, услуга, хотел, производство, свободна професия. Фокус: повече клиенти и продажби с малък бюджет и малко време.</p>
+                </button>
+                <button type="button" class="profile-option" data-profile="public" role="radio" aria-checked="false">
+                    <h3>Публична организация</h3>
+                    <p>Община, институция, НПО, училище, читалище. Фокус: ясна комуникация с гражданите, прозрачност и отговорно използване на ИИ.</p>
+                </button>
+            </div>
+            <button type="button" class="btn" id="goBtn" disabled>Продължи &#8594;</button>
+        </div>
+    </div>
+
+    <!-- 3: Experience self-check -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Преди да започнем</div>
+            <h2>Къде сте сега?</h2>
+            <div class="divider"></div>
+            <p class="subtitle">Отбележете какво вече правите. Нищо не се записва никъде — това е само за вас.</p>
+            <ul class="checklist">
+                <li><label><input type="checkbox"> Използвам чат асистент (ChatGPT, Claude, Gemini, Copilot) поне веднъж седмично</label></li>
+                <li><label><input type="checkbox"> Пиша промптове с цел, контекст и формат, а не само кратък въпрос</label></li>
+                <li><label><input type="checkbox"> Генерирал/а съм изображения или видео с ИИ за работа</label></li>
+                <li><label><input type="checkbox"> Имам план за съдържание и следя резултатите от публикациите си</label></li>
+                <li><label><input type="checkbox"> Знам какви данни не бива да въвеждам в ИИ инструменти</label></li>
+            </ul>
+            <p class="subtitle" style="margin-top:16px; font-size:15px;">
+                0–2 отметки: започнете от Тема 1 и не прескачайте. 3–5 отметки: можете да ускорите Теми 1–2 и да се фокусирате върху 3–6.
+            </p>
+            <p class="subtitle" style="margin-top:10px; font-size:15px;">
+                Курсът не заменя вашата преценка: ИИ е помощник, а отговорността за съдържанието и данните остава у вас.
+            </p>
+            <button type="button" class="btn" onclick="parent.postMessage({type:'next-section-arrow'}, '*')">Към Тема 1: Картата на ИИ през 2026 &#8594;</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="nav-bar">
+    <div class="nav-progress"></div>
+    <div class="nav-info mono"></div>
+    <div class="nav-buttons">
+        <button class="nav-btn" data-nav="prev" aria-label="Назад">&#8592;</button>
+        <button class="nav-btn" data-nav="next" aria-label="Напред">&#8594;</button>
+    </div>
+</div>
+
+<script src="shared.js"></script>
+<script>
+    (function () {
+        var options = document.querySelectorAll('.profile-option');
+        var go = document.getElementById('goBtn');
+        function mark(p) {
+            options.forEach(function (o) {
+                var on = o.dataset.profile === p;
+                o.classList.toggle('selected', on);
+                o.setAttribute('aria-checked', on ? 'true' : 'false');
+            });
+            go.disabled = !p;
+        }
+        mark(window.M4.getProfile());
+        options.forEach(function (o) {
+            o.addEventListener('click', function () { window.M4.setProfile(o.dataset.profile); mark(o.dataset.profile); });
+        });
+        go.addEventListener('click', function () { document.querySelector('[data-nav="next"]').click(); });
+    })();
+</script>
+</body>
+</html>

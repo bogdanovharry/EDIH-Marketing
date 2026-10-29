@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модул IV: Дигитален маркетинг с използване на изкуствен интелект</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; background: #0c1028; }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        .section { display: none; }
+        .section.active { display: block; width: 100%; height: 100%; }
+
+        /* ── Menu toggle button ── */
+        .menu-btn {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(12, 16, 40, 0.7);
+            backdrop-filter: blur(8px);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+        }
+
+        .menu-btn:hover {
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(12, 16, 40, 0.9);
+        }
+
+        .menu-btn.open {
+            color: #ffffff;
+            border-color: rgba(220, 78, 64, 0.4);
+            background: rgba(220, 78, 64, 0.15);
+        }
+
+        .menu-icon {
+            width: 18px;
+            height: 14px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-icon span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .menu-btn.open .menu-icon span:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
+
+        .menu-btn.open .menu-icon span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.open .menu-icon span:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
+
+        /* ── Menu panel ── */
+        .menu-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 320px;
+            height: 100%;
+            background: rgba(12, 16, 40, 0.97);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            z-index: 999;
+            padding: 80px 28px 40px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .menu-panel.open {
+            transform: translateX(0);
+        }
+
+        .menu-panel-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            margin-bottom: 4px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .menu-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .menu-item.active {
+            background: rgba(220, 78, 64, 0.08);
+            border-color: rgba(220, 78, 64, 0.2);
+        }
+
+        .menu-item-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.25);
+            width: 28px;
+            flex-shrink: 0;
+        }
+
+        .menu-item.active .menu-item-number {
+            color: #DC4E40;
+        }
+
+        .menu-item-label {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.3;
+        }
+
+        .menu-item.active .menu-item-label {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .menu-item:hover .menu-item-label {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ── Backdrop overlay ── */
+        .menu-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .menu-backdrop.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* ── Keyboard hint ── */
+        .menu-hint {
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.2);
+            line-height: 1.8;
+        }
+
+        .menu-hint kbd {
+            display: inline-block;
+            padding: 1px 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            font-family: inherit;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu button -->
+    <button class="menu-btn" id="menuBtn" title="Навигация (M)">
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+
+    <!-- Backdrop -->
+    <div class="menu-backdrop" id="menuBackdrop"></div>
+
+    <!-- Menu panel -->
+    <div class="menu-panel" id="menuPanel">
+        <div class="menu-panel-title">Навигация по теми</div>
+
+        <div class="menu-item active" data-section="sec-intro">
+            <div class="menu-item-number">00</div>
+            <div class="menu-item-label">Въведение</div>
+        </div>
+        <div class="menu-item" data-section="sec-01">
+            <div class="menu-item-number">01</div>
+            <div class="menu-item-label">Маркетингови стратегии задвижвани от ИИ</div>
+        </div>
+        <div class="menu-item" data-section="sec-02">
+            <div class="menu-item-number">02</div>
+            <div class="menu-item-label">ИИ за генериране и персонализиране на съдържание</div>
+        </div>
+        <div class="menu-item" data-section="sec-03">
+            <div class="menu-item-number">03</div>
+            <div class="menu-item-label">Анализ на данни за кампании</div>
+        </div>
+    </div>
+
+    <!-- Sections -->
+    <div id="sec-intro" class="section active">
+        <iframe src="00-intro.html"></iframe>
+    </div>
+
+    <div id="sec-01" class="section">
+        <iframe src="01-ai-marketing-strategies.html"></iframe>
+    </div>
+
+    <div id="sec-02" class="section">
+        <iframe src="02-ai-content-generation.html"></iframe>
+    </div>
+
+    <div id="sec-03" class="section">
+        <iframe src="03-ai-campaign-analysis.html"></iframe>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const menuBtn = document.getElementById('menuBtn');
+        const menuPanel = document.getElementById('menuPanel');
+        const menuBackdrop = document.getElementById('menuBackdrop');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        const sectionOrder = [
+            'sec-intro', 'sec-01', 'sec-02', 'sec-03'
+        ];
+
+        let menuOpen = false;
+
+        function toggleMenu() {
+            menuOpen = !menuOpen;
+            menuBtn.classList.toggle('open', menuOpen);
+            menuPanel.classList.toggle('open', menuOpen);
+            menuBackdrop.classList.toggle('open', menuOpen);
+        }
+
+        function closeMenu() {
+            menuOpen = false;
+            menuBtn.classList.remove('open');
+            menuPanel.classList.remove('open');
+            menuBackdrop.classList.remove('open');
+            setTimeout(() => focusActiveIframe(), 50);
+        }
+
+        function getActiveSection() {
+            const active = document.querySelector('.section.active');
+            return active ? active.id : sectionOrder[0];
+        }
+
+        function focusActiveIframe() {
+            const active = document.querySelector('.section.active iframe');
+            if (active) active.focus();
+        }
+
+        function showSection(id, goToSlide) {
+            sections.forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(id);
+            if (target) target.classList.add('active');
+
+            menuItems.forEach(item => {
+                item.classList.toggle('active', item.dataset.section === id);
+            });
+
+            const iframe = target.querySelector('iframe');
+
+            if (goToSlide === 'last' && iframe && iframe.contentWindow) {
+                setTimeout(() => {
+                    iframe.contentWindow.postMessage({type: 'go-to-last-slide'}, '*');
+                    iframe.focus();
+                }, 100);
+            } else {
+                if (iframe) setTimeout(() => iframe.focus(), 50);
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        menuBackdrop.addEventListener('click', closeMenu);
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                showSection(item.dataset.section);
+                closeMenu();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'm' || e.key === 'M') {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+                toggleMenu();
+            }
+            if (e.key === 'Escape' && menuOpen) {
+                closeMenu();
+            }
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                const iframe = document.querySelector('.section.active iframe');
+                if (iframe && iframe.contentWindow) {
+                    iframe.contentWindow.postMessage({type: 'keydown', key: e.key}, '*');
+                    e.preventDefault();
+                }
+            }
+        });
+
+        window.addEventListener('load', () => focusActiveIframe());
+
+        window.addEventListener('message', (e) => {
+            if (!e.data || !e.data.type) return;
+
+            if (e.data.type === 'next-section') {
+                showSection(e.data.sectionId);
+            }
+
+            if (e.data.type === 'next-section-arrow') {
+                const currentId = getActiveSection();
+                const idx = sectionOrder.indexOf(currentId);
+                if (idx < sectionOrder.length - 1) {
+                    showSection(sectionOrder[idx + 1]);
+                }
+            }
+
+            if (e.data.type === 'prev-section-arrow') {
+                const currentId = getActiveSection();
+                const idx = sectionOrder.indexOf(currentId);
+                if (idx > 0) {
+                    showSection(sectionOrder[idx - 1], 'last');
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модул IV: ИИ в работата и дигиталния маркетинг (самостоятелно обучение)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; height: 100%; overflow: hidden; background: #0c1028; }
+        #sections { width: 100%; height: 100%; }
+        iframe { width: 100%; height: 100%; border: none; display: block; }
+        .section { display: none; width: 100%; height: 100%; }
+        .section.active { display: block; }
+
+        .menu-btn { position: fixed; top: 16px; left: 16px; width: 40px; height: 40px; border: 1px solid rgba(0,0,0,0.15); background: rgba(255,255,255,0.85); color: #1a1a2e; font-size: 18px; cursor: pointer; z-index: 1000; display: flex; align-items: center; justify-content: center; }
+        .menu-btn:hover { border-color: #DC4E40; }
+        .menu-panel { position: fixed; top: 0; left: 0; width: 340px; max-width: 90vw; height: 100%; background: rgba(12,16,40,0.98); border-right: 1px solid rgba(255,255,255,0.06); z-index: 999; padding: 80px 24px 40px; transform: translateX(-100%); transition: transform 0.3s ease; overflow-y: auto; }
+        .menu-panel.open { transform: translateX(0); }
+        .menu-title { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .profile-line { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 18px; }
+        .profile-line b { color: #fff; }
+        .profile-line button { background: none; border: none; color: #e8736a; cursor: pointer; font: inherit; text-decoration: underline; }
+        .menu-item { display: flex; align-items: center; gap: 14px; padding: 12px 14px; margin-bottom: 4px; cursor: pointer; border: 1px solid transparent; }
+        .menu-item:hover { background: rgba(255,255,255,0.05); }
+        .menu-item.active { background: rgba(220,78,64,0.1); border-color: rgba(220,78,64,0.25); }
+        .menu-num { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.3); width: 26px; flex-shrink: 0; }
+        .menu-item.active .menu-num { color: #DC4E40; }
+        .menu-label { font-family: 'DM Sans', sans-serif; font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.3; flex: 1; }
+        .menu-item.active .menu-label { color: #fff; font-weight: 600; }
+        .menu-meta { font-family: 'Space Mono', monospace; font-size: 11px; color: rgba(255,255,255,0.35); }
+        .menu-item.done .menu-num::after { content: ' ✓'; color: #6fcf97; }
+        .backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 998; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+        .backdrop.open { opacity: 1; pointer-events: all; }
+    </style>
+</head>
+<body>
+    <button class="menu-btn" id="menuBtn" title="Навигация (M)" aria-label="Меню">&#9776;</button>
+    <div class="backdrop" id="backdrop"></div>
+    <nav class="menu-panel" id="menuPanel" aria-label="Навигация по теми">
+        <div class="menu-title">Курс · Модул IV</div>
+        <div class="profile-line" id="profileLine"></div>
+        <div id="menuItems"></div>
+    </nav>
+    <div id="sections"></div>
+
+    <script>
+        // Order of the course. `file` pages that are not written yet are simply left out of the list.
+        var STEPS = [
+            { id: 's00', file: '00-start.html',        label: 'Старт и избор на профил', time: '5 мин' },
+            { id: 's01', file: '01-ai-map-2026.html',  label: 'Картата на ИИ през 2026',  time: '~40 мин' },
+            { id: 's02', file: '02-working-with-ai.html', label: 'Как се работи с ИИ',  time: '~40 мин' }
+        ];
+        var PROFILE_LABEL = { sme: 'Малък и среден бизнес', 'public': 'Публична организация' };
+
+        function readStore(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+        function writeStore(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+
+        var menuBtn = document.getElementById('menuBtn');
+        var menuPanel = document.getElementById('menuPanel');
+        var backdrop = document.getElementById('backdrop');
+        var menuItemsEl = document.getElementById('menuItems');
+        var sectionsEl = document.getElementById('sections');
+        var profileLine = document.getElementById('profileLine');
+        var done = {};
+        try { done = JSON.parse(readStore('m4-done') || '{}'); } catch (e) { done = {}; }
+
+        STEPS.forEach(function (s, i) {
+            var item = document.createElement('div');
+            item.className = 'menu-item';
+            item.dataset.id = s.id;
+            item.innerHTML = '<div class="menu-num">' + (i < 10 ? '0' : '') + i + '</div><div class="menu-label"></div><div class="menu-meta"></div>';
+            item.querySelector('.menu-label').textContent = s.label;
+            item.querySelector('.menu-meta').textContent = s.time;
+            item.addEventListener('click', function () { show(s.id); toggleMenu(false); });
+            menuItemsEl.appendChild(item);
+
+            var sec = document.createElement('div');
+            sec.className = 'section';
+            sec.id = s.id;
+            sectionsEl.appendChild(sec);   // iframe is created lazily on first visit
+        });
+
+        function renderProfile() {
+            var p = readStore('m4-profile');
+            profileLine.innerHTML = p
+                ? 'Профил: <b></b> · <button type="button">смени</button>'
+                : 'Профилът още не е избран.';
+            if (p) {
+                profileLine.querySelector('b').textContent = PROFILE_LABEL[p] || p;
+                profileLine.querySelector('button').addEventListener('click', function () { show('s00'); toggleMenu(false); });
+            }
+        }
+
+        function frameOf(id) { return document.querySelector('#' + id + ' iframe'); }
+
+        function show(id, last) {
+            var step = STEPS.filter(function (s) { return s.id === id; })[0];
+            if (!step) return;
+            Array.prototype.forEach.call(document.querySelectorAll('.section'), function (s) { s.classList.toggle('active', s.id === id); });
+            Array.prototype.forEach.call(document.querySelectorAll('.menu-item'), function (m) {
+                m.classList.toggle('active', m.dataset.id === id);
+                m.classList.toggle('done', !!done[m.dataset.id]);
+            });
+            var sec = document.getElementById(id);
+            var f = frameOf(id);
+            if (!f) {
+                f = document.createElement('iframe');
+                f.title = step.label;
+                f.src = step.file;
+                sec.appendChild(f);
+            }
+            if (last) setTimeout(function () { f.contentWindow.postMessage({ type: 'go-to-last-slide' }, '*'); }, 150);
+            setTimeout(function () { f.focus(); }, 60);
+            writeStore('m4-current', id);
+        }
+
+        function indexOf(id) { return STEPS.map(function (s) { return s.id; }).indexOf(id); }
+        function currentId() { var a = document.querySelector('.section.active'); return a ? a.id : STEPS[0].id; }
+
+        function toggleMenu(force) {
+            var open = typeof force === 'boolean' ? force : !menuPanel.classList.contains('open');
+            menuPanel.classList.toggle('open', open);
+            backdrop.classList.toggle('open', open);
+            if (!open) { var f = frameOf(currentId()); if (f) setTimeout(function () { f.focus(); }, 50); }
+        }
+        menuBtn.addEventListener('click', function () { toggleMenu(); });
+        backdrop.addEventListener('click', function () { toggleMenu(false); });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'm' || e.key === 'M') toggleMenu();
+            if (e.key === 'Escape') toggleMenu(false);
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                var f = frameOf(currentId());
+                if (f && f.contentWindow) { f.contentWindow.postMessage({ type: 'keydown', key: e.key }, '*'); e.preventDefault(); }
+            }
+        });
+
+        window.addEventListener('message', function (e) {
+            var d = e.data;
+            if (!d || !d.type) return;
+            var i = indexOf(currentId());
+            if (d.type === 'next-section') show(d.sectionId);
+            if (d.type === 'next-section-arrow' && i < STEPS.length - 1) { done[STEPS[i].id] = true; writeStore('m4-done', JSON.stringify(done)); show(STEPS[i + 1].id); }
+            if (d.type === 'prev-section-arrow' && i > 0) show(STEPS[i - 1].id, true);
+            if (d.type === 'profile-changed') {
+                renderProfile();
+                Array.prototype.forEach.call(document.querySelectorAll('iframe'), function (f) {
+                    if (f.contentWindow) f.contentWindow.postMessage({ type: 'profile', profile: d.profile }, '*');
+                });
+            }
+        });
+
+        renderProfile();
+        // First visit starts at the profile chooser; later visits resume where the learner stopped.
+        var saved = readStore('m4-current');
+        show(readStore('m4-profile') && saved && indexOf(saved) >= 0 ? saved : STEPS[0].id);
+    </script>
+</body>
+</html>
