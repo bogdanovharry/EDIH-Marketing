@@ -175,6 +175,35 @@
         var cap = document.createElement('div'); cap.className = 'xp-cap'; stage.appendChild(cap);
         var cont = document.createElement('button'); cont.type = 'button'; cont.className = 'xp-continue'; cont.textContent = 'Продължи ▶'; stage.appendChild(cont);
 
+        /* motion layer: kinetic titles, chapter pills, badge, cursor spotlight */
+        function splitWords(node, c) {
+            Array.prototype.slice.call(node.childNodes).forEach(function (ch) {
+                if (ch.nodeType === 3) {
+                    var frag = document.createDocumentFragment();
+                    ch.textContent.split(/(\s+)/).forEach(function (part) {
+                        if (!part) return;
+                        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+                        var w = document.createElement('span'); w.className = 'w'; w.style.setProperty('--i', c.n++); w.textContent = part; frag.appendChild(w);
+                    });
+                    node.replaceChild(frag, ch);
+                } else if (ch.nodeType === 1) splitWords(ch, c);
+            });
+        }
+        Array.prototype.forEach.call(stage.querySelectorAll('.xp-t'), function (t) { t.classList.add('xp-kin'); splitWords(t, { n: 0 }); });
+        var chap = document.createElement('div'); chap.className = 'xp-chap';
+        var pills = scenes.map(function (s, k) {
+            var i = document.createElement('i'); i.title = 'Сцена ' + (k + 1);
+            i.addEventListener('click', function (e) { e.stopPropagation(); seek((before(k) + 1) / total); });
+            chap.appendChild(i); return i;
+        });
+        stage.appendChild(chap);
+        var badge = document.createElement('div'); badge.className = 'xp-badge'; badge.textContent = 'ЕДИХ · Интерактивно видео'; stage.appendChild(badge);
+        stage.addEventListener('pointermove', function (e) {
+            var r = stage.getBoundingClientRect();
+            stage.style.setProperty('--mx', (100 * (e.clientX - r.left) / r.width) + '%');
+            stage.style.setProperty('--my', (100 * (e.clientY - r.top) / r.height) + '%');
+        });
+
         var ctl = root.querySelector('[data-xp-controls]');
         ctl.className = 'xp-ctl';
         ctl.innerHTML = '<button type="button" data-a="play" aria-label="Пауза/Пусни">❚❚</button><button type="button" data-a="restart" aria-label="От начало">↻</button><div class="xp-bar" role="slider" aria-label="Напредък"><div></div></div><div class="xp-time"></div><button type="button" data-a="voice" title="Озвучаване с глас на браузъра (ако има български)">🔊</button>';
@@ -210,6 +239,18 @@
                 if (n.dataset.k !== String(k)) { n.textContent = txt.slice(0, k); n.dataset.k = String(k); }
                 n.classList.toggle('xp-done', k >= txt.length);
             });
+            Array.prototype.forEach.call(scene.querySelectorAll('.xp-count'), function (n) {
+                var at = parseInt(n.dataset.at, 10) || 0, to = parseFloat(n.dataset.to) || 0, from = parseFloat(n.dataset.from) || 0, cd = parseInt(n.dataset.cdur, 10) || 1500;
+                var q = Math.max(0, Math.min(1, (el - at) / cd)); q = 1 - Math.pow(1 - q, 3);
+                n.textContent = (n.dataset.pre || '') + Math.round(from + (to - from) * q) + (n.dataset.suf || '');
+            });
+            Array.prototype.forEach.call(scene.querySelectorAll('.xp-meter:not(.auto)'), function (m) {
+                var steps = m.querySelectorAll('.m-steps span'), at0 = parseInt(m.dataset.at, 10) || 0, gap = parseInt(m.dataset.gap, 10) || 900, n = 0;
+                Array.prototype.forEach.call(steps, function (sp, k) { var on = el >= at0 + k * gap; sp.classList.toggle('on', on); if (on) n++; });
+                m.style.setProperty('--w', n / steps.length);
+                var out = m.querySelector('.xp-pct'); if (out) out.textContent = Math.round(100 * n / steps.length) + '%';
+            });
+            pills.forEach(function (pl, k) { pl.style.setProperty('--p', k < idx ? 1 : (k === idx ? Math.min(1, el / durs[idx]) : 0)); });
             var wait = scene.hasAttribute('data-wait') && !released[idx] && el >= durs[idx];
             cont.classList.toggle('on', wait);
             var g = before(idx) + el;
