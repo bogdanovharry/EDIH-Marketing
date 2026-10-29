@@ -500,3 +500,26 @@ h1 em, h2 em { font-style: normal; background: var(--grad); -webkit-background-c
 
 /* Inactive slides must never catch clicks (video scenes set pointer-events: all on their own) */
 .slide:not(.active), .slide:not(.active) * { pointer-events: none !important; }
+
+/* ── Worked example slides ("Примерно решение") ── */
+.ex-banner { display: inline-flex; align-items: center; gap: 8px; margin: 2px 0 10px; padding: 5px 12px; border-radius: 99px; font: 700 11px 'Space Mono', monospace; letter-spacing: 1.4px; text-transform: uppercase; color: #5b3df5; background: rgba(99,102,241,.12); border: 1px solid rgba(99,102,241,.25); }
+.result { position: relative; padding: 16px 18px 14px 20px; border-radius: 16px; background: rgba(255,255,255,.92); box-shadow: var(--shadow-soft); border: 1px solid var(--glass-line); font-size: 14px; line-height: 1.5; color: rgba(0,0,0,.78); }
+.result::before { content: ''; position: absolute; left: 0; top: 12px; bottom: 12px; width: 4px; border-radius: 9px; background: var(--grad); }
+.result h4 { font: 700 11px 'Space Mono', monospace; letter-spacing: 1.6px; text-transform: uppercase; color: var(--blue); margin: 10px 0 4px; }
+.result h4:first-child { margin-top: 0; }
+.result ul, .result ol { padding-left: 18px; } .result li { margin-bottom: 3px; }
+.result .flag { color: #b45309; font-weight: 600; }
+.result table { width: 100%; border-collapse: collapse; margin: 4px 0; font-size: 13px; } .result th { text-align: left; font: 700 10.5px 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 1px; color: var(--blue); padding: 4px 8px; border-bottom: 2px solid rgba(44,55,129,.15); } .result td { padding: 5px 8px; border-bottom: 1px solid rgba(44,55,129,.1); vertical-align: top; }
+.why { margin-top: 12px; padding: 12px 16px; border-radius: 14px; background: rgba(46,158,107,.09); border: 1px solid rgba(46,158,107,.28); font-size: 13.5px; line-height: 1.5; }
+.why b.h { display: block; font: 700 11px 'Space Mono', monospace; letter-spacing: 1.4px; text-transform: uppercase; color: #1f7a52; margin-bottom: 4px; }
+.why ul { list-style: none; } .why li { padding-left: 22px; position: relative; margin-bottom: 3px; } .why li::before { content: '✓'; position: absolute; left: 0; color: #1f7a52; font-weight: 700; }
+.inputs { padding: 12px 16px; border-radius: 14px; background: rgba(99,102,241,.07); border: 1px dashed rgba(99,102,241,.35); font-size: 13.5px; line-height: 1.5; margin-bottom: 10px; }
+.inputs b.h { display: block; font: 700 11px 'Space Mono', monospace; letter-spacing: 1.4px; text-transform: uppercase; color: #5b3df5; margin-bottom: 4px; }
+.inputs ol { padding-left: 18px; } .inputs li { margin-bottom: 3px; }
+.ex-split { display: grid; grid-template-columns: .85fr 1.15fr; gap: 24px; align-items: start; margin-top: 10px; }
+.ex-split.wide { grid-template-columns: .7fr 1.3fr; }
+@media (max-width: 900px) { .ex-split, .ex-split.wide { grid-template-columns: 1fr; } }
+.slide .content-block.ex-wide { max-width: 1180px; }
+.slide { justify-content: safe center; }
+.slide:has(.ex-wide) { justify-content: flex-start; padding-top: 78px; }
+.ex-wide > .tag { margin-bottom: 6px; } .ex-wide h2 { font-size: clamp(22px, 2.4vw, 32px); margin-bottom: 8px; } .ex-wide .divider { margin: 8px 0; } .ex-wide .lead { font-size: 16px; margin-bottom: 6px; }
