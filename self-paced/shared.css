@@ -497,3 +497,6 @@ h1 em, h2 em { font-style: normal; background: var(--grad); -webkit-background-c
 .final .quiz { margin-top: 8px; padding: 12px 14px; } .final .quiz-q { font-size: 14.5px; margin-bottom: 6px; } .final .quiz-opt { padding: 7px 11px; font-size: 13.5px; margin-bottom: 5px; } .final .quiz-title { display: none; }
 @media (max-width: 760px) { .final { grid-template-columns: 1fr !important; } }
 .checklist label { display: flex; gap: 10px; align-items: flex-start; cursor: pointer; }
+
+/* Inactive slides must never catch clicks (video scenes set pointer-events: all on their own) */
+.slide:not(.active), .slide:not(.active) * { pointer-events: none !important; }
