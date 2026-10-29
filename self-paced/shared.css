@@ -591,3 +591,22 @@ h1 em, h2 em { font-style: normal; background: var(--grad); -webkit-background-c
 #planDoc .flag, .result .flag { color: #b45309; font-weight: 600; }
 .result h3 { font-size: 14px; margin: 8px 0 2px; color: var(--blue); letter-spacing: 0; }
 .slide .prompt-box { max-height: 340px; overflow-y: auto; }
+.legal.ok { border: 1px solid rgba(46,158,107,.45); border-style: solid; background: rgba(46,158,107,.09); color: rgba(10,60,35,.92); }
+.legal.ok b:first-child { color: #1f7a52; }
+.legal .srcs { display: block; margin-top: 4px; font-size: 12px; opacity: .85; } .legal a { color: inherit; text-decoration: underline; }
+.src-tbl td:last-child, .src-tbl td:nth-child(3) { font-size: 13px; }
+.st-ok { color: #1f7a52; font-weight: 700; } .st-part { color: #b45309; font-weight: 700; } .st-no { color: #b02a37; font-weight: 700; }
+.ex-banner.real { color: #0b6b4b; background: rgba(46,158,107,.12); border-color: rgba(46,158,107,.35); }
+.result.real::before { background: linear-gradient(180deg, #2e9e6b, #6366f1); }
+.why.warn { background: rgba(251,191,36,.12); border-color: rgba(180,120,0,.35); } .why.warn b.h { color: #8a5a00; } .why.warn li::before { content: '!'; color: #b45309; }
+details.conv { margin: 6px 0; border-radius: 12px; background: var(--glass); border: 1px solid var(--glass-line); } details.conv summary { cursor: pointer; padding: 10px 14px; font-weight: 700; color: var(--blue); } details.conv[open] summary { border-bottom: 1px solid var(--glass-line); } details.conv .result { margin: 10px; max-height: 70vh; overflow-y: auto; box-shadow: none; }
+.slide .result.real { max-height: calc(100vh - 330px); min-height: 260px; overflow-y: auto; }
+@media print {
+    body.print-all .slide { display: block !important; position: static !important; break-after: page; min-height: 0 !important; padding: 0 0 16px !important; }
+    body.print-all .slide .noprint, body.print-all .slide .toolbar { display: none !important; }
+    body.print-all .slide > .accent-corner, body.print-all .slide > .slide-number, body.print-all .big-number { display: none !important; }
+    body.print-all .content-block { max-width: none !important; animation: none !important; } body.print-all .content-block > * { animation: none !important; }
+    body.print-all .prompt-box { max-height: none !important; overflow: visible !important; white-space: pre-wrap; break-inside: avoid; }
+    body.print-all details.conv .result { max-height: none !important; }
+    body.print-all .copy-btn { display: none !important; }
+}
