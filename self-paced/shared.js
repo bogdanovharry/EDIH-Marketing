@@ -88,6 +88,97 @@
     if (btnPrev) btnPrev.addEventListener('click', prev);
     if (btnNext) btnNext.addEventListener('click', next);
 
+    /* ── Plan store: profile + sections of the final marketing plan ──
+       Lives in localStorage ('m4-plan'); inside the shell (index.html) it is also mirrored in the parent window,
+       because file:// pages do not always share storage. Newer timestamp wins. */
+    var SECTIONS = [
+        { key: 'audit', title: 'Профил и изходно положение', topic: 1 },
+        { key: 'voice', title: 'Глас и тон', topic: 2 },
+        { key: 'audience', title: 'Аудитория', topic: 3 },
+        { key: 'rivals', title: 'Аналози и конкуренти', topic: 3 },
+        { key: 'goal', title: 'Цел и канали', topic: 3 },
+        { key: 'content', title: 'Съдържание и календар за 30 дни', topic: 4 },
+        { key: 'auto', title: 'Автоматизации и реклама', topic: 5 },
+        { key: 'kpi', title: 'Показатели и мерене', topic: 6 },
+        { key: 'policy', title: 'Правила за ИИ и данни', topic: 7 },
+        { key: 'next', title: 'Следващи стъпки и рискове', topic: 7 }
+    ];
+    var plan = loadPlan();
+    var planListeners = [];
+    function loadPlan() {
+        var p = {};
+        try { p = JSON.parse(readStore('m4-plan') || '{}') || {}; } catch (e) { p = {}; }
+        p.profile = p.profile || {}; p.sections = p.sections || {}; p.ts = p.ts || 0;
+        return p;
+    }
+    function planChanged() { planListeners.forEach(function (f) { try { f(); } catch (e) {} }); }
+    function savePlan() {
+        plan.ts = Date.now();
+        writeStore('m4-plan', JSON.stringify(plan));
+        if (window.parent !== window) window.parent.postMessage({ type: 'plan-set', plan: plan }, '*');
+        planChanged();
+    }
+    window.addEventListener('message', function (e) {
+        var d = e.data;
+        if (d && d.type === 'plan-sync' && d.plan && (d.plan.ts || 0) > plan.ts) {
+            plan = d.plan; plan.profile = plan.profile || {}; plan.sections = plan.sections || {};
+            writeStore('m4-plan', JSON.stringify(plan));
+            bindFields(); planChanged();
+        }
+    });
+    if (window.parent !== window) window.parent.postMessage({ type: 'plan-get' }, '*');
+
+    var timers = {};
+    function bindFields() {
+        Array.prototype.forEach.call(document.querySelectorAll('[data-plan-profile], [data-plan-section]'), function (el) {
+            if (document.activeElement === el) return;
+            var v = el.hasAttribute('data-plan-profile') ? plan.profile[el.dataset.planProfile] : plan.sections[el.dataset.planSection];
+            el.value = v || '';
+        });
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('[data-plan-profile], [data-plan-section]'), function (el) {
+        el.addEventListener('input', function () {
+            var isP = el.hasAttribute('data-plan-profile'), k = isP ? el.dataset.planProfile : el.dataset.planSection;
+            clearTimeout(timers[k]);
+            timers[k] = setTimeout(function () { (isP ? plan.profile : plan.sections)[k] = el.value; savePlan(); }, 250);
+        });
+    });
+    function updateStatuses() {
+        Array.prototype.forEach.call(document.querySelectorAll('[data-plan-status]'), function (st) {
+            var k = st.dataset.planStatus, filled = (plan.sections[k] || '').trim().length > 0;
+            st.textContent = filled ? '✓ Записано в плана' : 'Още не е записано в плана';
+            st.classList.toggle('ok', filled);
+        });
+    }
+    planListeners.push(updateStatuses);
+
+    /* prompt boxes with {{profile.key|подсказка}} / {{sec.key|подсказка}} are filled from the plan */
+    Array.prototype.forEach.call(document.querySelectorAll('.prompt-box'), function (box) {
+        var tpl = box.textContent;
+        if (tpl.indexOf('{{') < 0) return;
+        var span = document.createElement('span'); span.className = 'pb-text';
+        box.textContent = ''; box.appendChild(span);
+        var render = function () {
+            span.textContent = tpl.replace(/\{\{\s*(profile|sec)\.([a-z]+)\s*(?:\|([^}]*))?\}\}/g, function (m, kind, key, hint) {
+                var v = ((kind === 'profile' ? plan.profile : plan.sections)[key] || '').trim();
+                return v || '[' + (hint || key).trim() + ']';
+            });
+        };
+        planListeners.push(render); render();
+    });
+
+    window.M4.plan = {
+        sections: SECTIONS,
+        get: function () { return plan; },
+        onChange: function (f) { planListeners.push(f); },
+        filled: function (k) { return (plan.sections[k] || '').trim().length > 0; },
+        count: function () { return SECTIONS.filter(function (s) { return (plan.sections[s.key] || '').trim().length > 0; }).length; },
+        clear: function () { plan = { profile: {}, sections: {}, ts: 0 }; savePlan(); bindFields(); },
+        setAll: function (profile, sections) { plan.profile = JSON.parse(JSON.stringify(profile)); plan.sections = JSON.parse(JSON.stringify(sections)); savePlan(); bindFields(); },
+        setProfile: function (obj) { Object.keys(obj).forEach(function (k) { plan.profile[k] = obj[k]; }); savePlan(); bindFields(); }
+    };
+    bindFields(); updateStatuses();
+
     /* ── Copy buttons for prompt boxes ── */
     Array.prototype.forEach.call(document.querySelectorAll('.prompt-box'), function (box) {
         var btn = document.createElement('button');

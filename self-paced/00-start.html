@@ -52,6 +52,33 @@
         </div>
     </div>
 
+    <!-- 2b: Project (profile data for the marketing plan) -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Вашият проект · 3 мин</div>
+            <h2>Опишете вашата фирма или организация</h2>
+            <div class="divider"></div>
+            <p class="lead">Описвате фирмата или организацията си веднъж. Тези данни се вмъкват сами в промптовете на всички теми, а резултатите от задачите се събират в <strong>един цялостен маркетингов план</strong>, който свалявате в края.</p>
+            <div class="plan-form">
+                <div><label for="pf-name">Име на фирмата или организацията</label><input id="pf-name" data-plan-profile="name" placeholder="например: онлайн магазин за ..."></div>
+                <div><label for="pf-offer">Какво предлагате?</label><textarea id="pf-offer" data-plan-profile="offer" rows="2" placeholder="продукти, услуги, кратко описание"></textarea></div>
+                <div class="row2">
+                    <div><label for="pf-place">Къде</label><input id="pf-place" data-plan-profile="place" placeholder="град, регион или онлайн"></div>
+                    <div><label for="pf-aud">Основна аудитория</label><input id="pf-aud" data-plan-profile="audience" placeholder="кои са клиентите или гражданите"></div>
+                </div>
+                <div class="row2">
+                    <div><label for="pf-ch">Канали, които ползвате</label><input id="pf-ch" data-plan-profile="channels" placeholder="сайт, Facebook, Instagram..."></div>
+                    <div><label for="pf-chg">Каква промяна искате?</label><input id="pf-chg" data-plan-profile="change" placeholder="например: повече поръчки"></div>
+                </div>
+            </div>
+            <p class="privacy">Данните остават само в този браузър и не се изпращат никъде. Не въвеждайте лични данни на клиенти или граждани.</p>
+            <button type="button" class="fill-demo" id="fillDemo">Попълни с примера</button>
+            <button type="button" class="btn" onclick="document.querySelector('[data-nav=&quot;next&quot;]').click()">Продължи &#8594;</button>
+        </div>
+    </div>
+
     <!-- 3: Experience self-check -->
     <div class="slide">
         <div class="accent-corner"></div>
@@ -107,6 +134,18 @@
             o.addEventListener('click', function () { window.M4.setProfile(o.dataset.profile); mark(o.dataset.profile); });
         });
         go.addEventListener('click', function () { document.querySelector('[data-nav="next"]').click(); });
+    })();
+</script>
+<script>
+    (function () {
+        var DEMO = {"sme": {"name": "Зелен кът", "offer": "Онлайн магазин за стайни растения, саксии и торове с доставка с куриер в цялата страна. Екип: собственик и помощник.", "place": "Цяла България (онлайн)", "audience": "Хора на 25–45 години, които живеят в апартамент и искат растения, които оцеляват, както и купувачи на подаръци.", "channels": "Сайт, Facebook страница, Instagram", "change": "Повече поръчки от нови клиенти през сайта"}, "public": {"name": "Община Габрово (илюстративен сценарий)", "offer": "Услуги за граждани и бизнеса. Кампания за популяризиране на електронните административни услуги.", "place": "Габрово", "audience": "Жители на общината, включително възрастни и заети хора, които нямат време за гише.", "channels": "Фейсбук страница, уебсайт, информационни съобщения", "change": "Повече хора да ползват електронни услуги вместо да чакат на гише"}};
+        var LABEL = {"sme": "Зелен кът (онлайн магазин)", "public": "Община Габрово (илюстративен сценарий)"};
+        var btn = document.getElementById('fillDemo');
+        function refresh() { var p = window.M4.getProfile() || 'sme'; btn.textContent = 'Попълни с примера: ' + LABEL[p]; }
+        btn.addEventListener('click', function () { window.M4.plan.setProfile(DEMO[window.M4.getProfile() || 'sme']); });
+        refresh();
+        window.addEventListener('message', function (e) { if (e.data && e.data.type === 'profile') setTimeout(refresh, 30); });
+        document.querySelectorAll('.profile-option').forEach(function (o) { o.addEventListener('click', function () { setTimeout(refresh, 30); }); });
     })();
 </script>
 </body>
