@@ -25,6 +25,29 @@
         <div class="big-number">A6</div>
     </div>
 
+        <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Кратко видео · ≈ 25 сек</div>
+            <h2>Накратко: Бранд кит</h2>
+            <div class="xp-wrap">
+                <div class="xp">
+<div class="xp-scene" data-dur="8000" data-cap="Един глас, цветове и стил, за да изглежда всичко като от едно място.">
+<div class="xp-t xp-a" data-at="200">Бранд кит: за <em>какво</em> става дума</div><div class="xp-row"><div class="xp-ico xp-a" data-at="1200"><b>🗣️</b><span>Модул 6</span><small>Един глас, цветове и стил, за да изглежда всичко като от едн</small></div></div>
+</div>
+<div class="xp-scene" data-dur="9000" data-cap="Работите на четири кратки стъпки. На всяка ИИ прави чернова, а вие проверявате и запазвате в плана.">
+<div class="xp-t xp-a" data-at="200">Какво <em>правите</em></div><div class="xp-flow"><div class="xp-step xp-a" data-at="1000"><b>🗣️</b>Глас</div><div class="xp-arrow xp-a" data-at="1400">→</div><div class="xp-step xp-a" data-at="1700"><b>🎨</b>Цветове</div><div class="xp-arrow xp-a" data-at="2100">→</div><div class="xp-step xp-a" data-at="2400"><b>🔤</b>Шрифтове</div><div class="xp-arrow xp-a" data-at="2800">→</div><div class="xp-step xp-a" data-at="3100"><b>🖼️</b>Image prompt</div></div>
+</div>
+<div class="xp-scene" data-dur="8000" data-cap="В края имате готов резултат, който влиза в плана и в пакета материали.">
+<div class="xp-t xp-a" data-at="200">Какво <em>получавате</em></div><div class="xp-row"><div class="xp-ico xp-a" data-at="1200"><b>📄</b><span>Бранд кит и шаблон на image prompt</span><small>запазва се в плана</small></div></div>
+</div>
+                </div>
+                <div data-xp-controls></div>
+            </div>
+        </div>
+    </div>
+
     <div class="slide">
         <div class="accent-corner"></div>
         <div class="slide-number"></div>
@@ -54,7 +77,11 @@
             <div class="tag">Как се прави</div>
             <h2>Промптът за бранд кит и шаблонът за image prompt</h2>
             <div class="divider"></div>
-<div class="prompt-box" data-p="sme">Ти си специалист по маркетинг. Бизнес: {{profile.name|име}} — {{profile.offer|какво предлагате}}. Глас (указания): {{sec.voice|указанията за глас}}. Направи кратък бранд кит: 1) глас: 3 прилагателни и по 4 „казваме“ и „не казваме“; 2) 4 цвята с HEX и роля (проверявай контраста за четим текст); 3) два шрифта с алтернативи (не твърдиш нищо за лицензи); 4) стил на изображенията: светлина, фон, композиция, настроение, какво избягваме; 5) шаблон на image prompt с полета [какво] [стил] [композиция] [светлина] [без]. Кратко, на таблици. Не измисляй факти.</div><div class="prompt-box" data-p="public">Ти си консултант по комуникации. Организация: {{profile.name|име}} — {{profile.offer|какво предлагаме}}. Глас (указания): {{sec.voice|указанията за глас}}. Направи кратък бранд кит: 1) глас: 3 прилагателни и „казваме / не казваме“; 2) 4 цвята с HEX и роля (проверявай контраста); 3) два шрифта с кирилица и алтернативи (не твърдиш нищо за лицензи); 4) стил на изображенията (без лица без съгласие); 5) шаблон на image prompt с полета [какво] [стил] [композиция] [светлина] [без]. Кратко. Не измисляй факти.</div><div class="example"><strong>Шаблон на image prompt:</strong> „[какво е в кадъра], [стил: фотографски/илюстрация], [композиция: близък план, място за текст отдясно], [светлина: мека естествена], без [хора, лога, текст в изображението].“</div>
+<div class="prompt-box" data-title="Стъпка 1 от 2 · Бранд кит">Задача: направи кратък бранд кит в таблици: глас (3 прилагателни, „казваме / не казваме“), 4 цвята с HEX и роля, 2 шрифта с кирилица, стил на изображенията.
+Контекст: {{profile.name|фирма}} — {{profile.offer|какво предлагаме}}; указания за глас: {{sec.voice|указания}}.
+Формат: проверявай контраста; без твърдения за лицензи.</div><div class="prompt-box" data-title="Стъпка 2 от 2 · Шаблон на image prompt">Задача: направи шаблон на image prompt с полета [какво] [стил] [композиция] [светлина] [без] по този бранд кит и един пример.
+Контекст: бранд кит: {{in.kit|поставете бранд кита от стъпка 1}}; тема на примера: {{in.topic|тема}}.
+Формат: на български; без реални хора и марки.</div><div class="example"><strong>Шаблон на image prompt:</strong> „[какво е в кадъра], [стил: фотографски/илюстрация], [композиция: близък план, място за текст отдясно], [светлина: мека естествена], без [хора, лога, текст в изображението].“</div>
         </div>
     </div>
 

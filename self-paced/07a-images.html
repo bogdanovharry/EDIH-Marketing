@@ -25,6 +25,29 @@
         <div class="big-number">A7</div>
     </div>
 
+        <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Кратко видео · ≈ 25 сек</div>
+            <h2>Накратко: Изображения</h2>
+            <div class="xp-wrap">
+                <div class="xp">
+<div class="xp-scene" data-dur="8000" data-cap="Шест визии за публикации и една инфографика, с надпис и алтернативен текст.">
+<div class="xp-t xp-a" data-at="200">Изображения: за <em>какво</em> става дума</div><div class="xp-row"><div class="xp-ico xp-a" data-at="1200"><b>💡</b><span>Модул 7</span><small>Шест визии за публикации и една инфографика, с надпис и алте</small></div></div>
+</div>
+<div class="xp-scene" data-dur="9000" data-cap="Работите на четири кратки стъпки. На всяка ИИ прави чернова, а вие проверявате и запазвате в плана.">
+<div class="xp-t xp-a" data-at="200">Какво <em>правите</em></div><div class="xp-flow"><div class="xp-step xp-a" data-at="1000"><b>💡</b>Идеи</div><div class="xp-arrow xp-a" data-at="1400">→</div><div class="xp-step xp-a" data-at="1700"><b>🖼️</b>Изображения</div><div class="xp-arrow xp-a" data-at="2100">→</div><div class="xp-step xp-a" data-at="2400"><b>✏️</b>Надпис</div><div class="xp-arrow xp-a" data-at="2800">→</div><div class="xp-step xp-a" data-at="3100"><b>♿</b>Алт. текст</div></div>
+</div>
+<div class="xp-scene" data-dur="8000" data-cap="В края имате готов резултат, който влиза в плана и в пакета материали.">
+<div class="xp-t xp-a" data-at="200">Какво <em>получавате</em></div><div class="xp-row"><div class="xp-ico xp-a" data-at="1200"><b>📄</b><span>6 изображения и SVG инфографика</span><small>запазва се в плана</small></div></div>
+</div>
+                </div>
+                <div data-xp-controls></div>
+            </div>
+        </div>
+    </div>
+
     <div class="slide">
         <div class="accent-corner"></div>
         <div class="slide-number"></div>
@@ -54,7 +77,9 @@
             <div class="tag">Как се прави</div>
             <h2>Промптът за 6 идеи за изображения</h2>
             <div class="divider"></div>
-<div class="split"><div><ol class="steps"><li>Дайте календара/темите и стила от бранд кита.</li><li>Пуснете промпта (във всеки инструмент) и вземете 6 идеи.</li><li>Копирайте image prompt-а в ChatGPT или Gemini (или отидете към SVG в Claude).</li><li>Добавете надписа в редактор; сложете алтернативния текст.</li><li>Проверете по рубриката.</li></ol></div><div><div class="prompt-box" data-p="sme">Ти си специалист по визуален маркетинг. Бизнес: {{profile.name|име}}. Бранд кит: [поставете бранд кита: палитра и стил на изображенията]. Теми за публикации: [изброй 6]. Направи 6 идеи, по една за тема: цел; формат (1:1, 4:5 или 16:9, като препоръка); image prompt на български за ChatGPT/Gemini (какво, стил, композиция, светлина, без какво); надпис до 6 думи (ще го добавя сам в редактор); алтернативен текст до 125 знака; дали да се означи като ИИ. Без реални хора и без марки. Не измисляй факти.</div><div class="prompt-box" data-p="public">Ти си консултант по комуникации. Организация: {{profile.name|име}}. Бранд кит: [поставете бранд кита: палитра и стил на изображенията]. Теми за публикации: [изброй 6]. Направи 6 идеи, по една за тема: цел; формат (1:1, 4:5 или 16:9, като препоръка); image prompt на български за ChatGPT/Gemini (какво, стил, композиция, светлина, без какво); надпис до 6 думи (ще го добавя сам в редактор); алтернативен текст до 125 знака; дали да се означи като ИИ. Без реални хора без съгласие и без лога. Не измисляй факти.</div></div></div>
+<div class="split"><div><ol class="steps"><li>Дайте календара/темите и стила от бранд кита.</li><li>Пуснете промпта (във всеки инструмент) и вземете 6 идеи.</li><li>Копирайте image prompt-а в ChatGPT или Gemini (или отидете към SVG в Claude).</li><li>Добавете надписа в редактор; сложете алтернативния текст.</li><li>Проверете по рубриката.</li></ol></div><div><div class="prompt-box" data-title="Стъпка 1 от 2 · Идеи за 6 изображения">Задача: направи 6 идеи за изображения, по една за тема: формат (1:1, 4:5 или 16:9), image prompt, надпис до 6 думи, алтернативен текст до 125 знака, дали да се означи като ИИ.
+Контекст: {{profile.name|фирма}}; бранд кит: {{in.kit|палитра и стил от бранд кита}}; теми: {{in.topics|6 теми}}.
+Формат: таблица; без реални хора и марки.</div></div></div>
         </div>
     </div>
 
@@ -193,7 +218,9 @@
             <div class="tag">Как се прави</div>
             <h2>SVG инфографика: промпт и как се запазва</h2>
             <div class="divider"></div>
-<div class="split"><div><ol class="steps"><li>Дайте темата, палитрата от бранд кита и размера (1080×1080).</li><li>Поискайте „ПЪЛНИЯ SVG код в един блок“ и шрифт sans-serif.</li><li>В Claude (или Artifacts) резултатът може да се види и изтегли; иначе копирайте кода в текстов файл и го запазете като <kbd>.svg</kbd>.</li><li>Отворете файла в браузър, проверете кирилицата и размера.</li><li>За публикация го запазете като PNG през редактор или от браузъра.</li></ol></div><div><div class="prompt-box" data-p="sme">Ти си графичен дизайнер. Направи инфографика като SVG код: „[заглавие, напр. Как да … : 3 стъпки]“. Задължително: viewBox="0 0 1080 1080", цветове от моя бранд кит ([поставете бранд кита: палитра и стил на изображенията]), шрифт sans-serif, голям четим текст на български (до 8 думи на стъпка), кръгове с номера 1, 2, 3, прости иконки, достатъчен контраст, без външни ресурси и без изображения. Върни ПЪЛНИЯ SVG код в един блок.</div><div class="prompt-box" data-p="public">Ти си графичен дизайнер. Направи инфографика като SVG код: „[заглавие, напр. Как да подадете заявление онлайн: 3 стъпки]“. Задължително: viewBox="0 0 1080 1080", цветове от нашия бранд кит ([поставете бранд кита: палитра и стил на изображенията]), шрифт sans-serif, голям четим текст на български (до 8 думи на стъпка), кръгове с номера, прости иконки, достатъчен контраст, без външни ресурси и без изображения. Върни ПЪЛНИЯ SVG код в един блок. Съдържанието на стъпките трябва да е проверено от служител.</div></div></div>
+<div class="split"><div><ol class="steps"><li>Дайте темата, палитрата от бранд кита и размера (1080×1080).</li><li>Поискайте „ПЪЛНИЯ SVG код в един блок“ и шрифт sans-serif.</li><li>В Claude (или Artifacts) резултатът може да се види и изтегли; иначе копирайте кода в текстов файл и го запазете като <kbd>.svg</kbd>.</li><li>Отворете файла в браузър, проверете кирилицата и размера.</li><li>За публикация го запазете като PNG през редактор или от браузъра.</li></ol></div><div><div class="prompt-box" data-title="Стъпка 2 от 2 · Инфографика (SVG)">Задача: направи инфографика като SVG код, 1080×1080, 3 стъпки с номера, четим текст до 8 думи на стъпка.
+Контекст: заглавие: {{in.title|напр. Как да …: 3 стъпки}}; цветове: {{in.kit|палитра от бранд кита}}.
+Формат: целият SVG в един блок, без външни ресурси.</div></div></div>
         </div>
     </div>
 
@@ -226,7 +253,7 @@
             <div class="tag">Обобщение</div>
             <h2>Какво направихте</h2>
             <div class="divider"></div>
-<ol class="steps"><li>Знаете какво прави изображението добро и кой инструмент за какво.</li><li>Създадохте или редактирахте изображение (ChatGPT/Gemini) или инфографика (Claude).</li><li>Проверихте по рубриката и знаете кога се означава като ИИ.</li><li>Следва Етап 3: канали (социални мрежи, Google профил и сайт, имейл).</li></ol><p class="lead" style="margin-top:14px;"><span class="hint">Малък речник: помислете какво значи думата, после кликнете</span></p><div class="rev-grid"><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>Image prompt</div><div class="rev-a">Заявка за изображение.</div></div><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>SVG</div><div class="rev-a">Векторно изображение като код; чисто и мащабируемо.</div></div><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>Алтернативен текст</div><div class="rev-a">Кратко описание за хора, които не виждат изображението.</div></div><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>SynthID</div><div class="rev-a">Невидим знак на Google върху генерирани изображения.</div></div></div>
+<ol class="steps"><li>Знаете какво прави изображението добро и кой инструмент за какво.</li><li>Създадохте или редактирахте изображение (ChatGPT/Gemini) или инфографика (Claude).</li><li>Проверихте по рубриката и знаете кога се означава като ИИ.</li><li>Следва Модул 8: социални мрежи.</li></ol><p class="lead" style="margin-top:14px;"><span class="hint">Малък речник: помислете какво значи думата, после кликнете</span></p><div class="rev-grid"><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>Image prompt</div><div class="rev-a">Заявка за изображение.</div></div><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>SVG</div><div class="rev-a">Векторно изображение като код; чисто и мащабируемо.</div></div><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>Алтернативен текст</div><div class="rev-a">Кратко описание за хора, които не виждат изображението.</div></div><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>SynthID</div><div class="rev-a">Невидим знак на Google върху генерирани изображения.</div></div></div>
         </div>
     </div>
 

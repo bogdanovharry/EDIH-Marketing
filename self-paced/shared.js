@@ -163,19 +163,50 @@
     }
     planListeners.push(updateStatuses);
 
-    /* prompt boxes with {{profile.key|подсказка}} / {{sec.key|подсказка}} are filled from the plan */
+    /* prompt cards: {{profile.key|hint}} / {{sec.key|hint}} are prefilled from the plan, {{in.key|hint}} is a free field; fields stay editable */
+    function brief(v) {
+        v = (v || '').replace(/\s+/g, ' ').trim();
+        if (v.length <= 200) return v;
+        var cut = v.slice(0, 200), i = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('; '));
+        return (i > 100 ? cut.slice(0, i + 1) : cut.replace(/\s+\S*$/, '') + '…');
+    }
     Array.prototype.forEach.call(document.querySelectorAll('.prompt-box'), function (box) {
-        var tpl = box.textContent;
-        if (tpl.indexOf('{{') < 0) return;
-        var span = document.createElement('span'); span.className = 'pb-text';
-        box.textContent = ''; box.appendChild(span);
+        var tpl = box.textContent.trim(), title = box.dataset.title, wrap = document.createElement('div');
+        var body = document.createElement('div'); body.className = 'pb-text';
+        box.textContent = '';
+        if (title) { var h = document.createElement('div'); h.className = 'pb-title'; h.textContent = title; box.appendChild(h); }
+        box.appendChild(body);
+        var fields = [], re = /\{\{\s*(profile|sec|in)\.([a-z0-9_]+)\s*(?:\|([^}]*))?\}\}/g, last = 0, m;
+        while ((m = re.exec(tpl))) {
+            if (m.index > last) body.appendChild(document.createTextNode(tpl.slice(last, m.index)));
+            var f = document.createElement('span'); f.className = 'pf'; f.contentEditable = 'true'; f.spellcheck = false;
+            f.dataset.ph = (m[3] || m[2]).trim(); f.dataset.kind = m[1]; f.dataset.key = m[2];
+            f.addEventListener('input', function () { this.dataset.dirty = '1'; });
+            body.appendChild(f); fields.push(f); last = re.lastIndex;
+        }
+        if (last < tpl.length) body.appendChild(document.createTextNode(tpl.slice(last)));
         var render = function () {
-            span.textContent = tpl.replace(/\{\{\s*(profile|sec)\.([a-z]+)\s*(?:\|([^}]*))?\}\}/g, function (m, kind, key, hint) {
-                var v = ((kind === 'profile' ? plan.profile : plan.sections)[key] || '').trim();
-                return v || '[' + (hint || key).trim() + ']';
+            fields.forEach(function (f) {
+                if (f.dataset.dirty) return;
+                if (f.dataset.kind === 'in') return;
+                var v = (f.dataset.kind === 'profile' ? plan.profile : plan.sections)[f.dataset.key];
+                f.textContent = (f.dataset.kind === 'sec' && !box.dataset.full) ? brief(v) : (v || '').trim();
             });
         };
-        planListeners.push(render); render();
+        if (fields.length) { planListeners.push(render); render(); }
+        var btn = document.createElement('button'); btn.className = 'copy-btn'; btn.type = 'button'; btn.textContent = 'Копирай';
+        btn.addEventListener('click', function () {
+            var val = Array.prototype.map.call(body.childNodes, function (n) {
+                if (n.nodeType === 3) return n.textContent;
+                var t = n.textContent.trim(); return t || '[' + n.dataset.ph + ']';
+            }).join('').trim();
+            var done = function () { btn.textContent = 'Копирано ✓'; setTimeout(function () { btn.textContent = 'Копирай'; }, 1600); };
+            if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(val).then(done, function () {});
+        });
+        box.appendChild(btn);
+        var hint = document.createElement('div'); hint.className = 'pb-hint';
+        hint.textContent = fields.length ? 'Подчертаните полета са попълнени от вашия план. Кликнете, за да ги промените.' : '';
+        if (fields.length && !window.__pbHint) { box.appendChild(hint); window.__pbHint = 1; }
     });
 
     /* ── Chosen AI tool: 'chatgpt' | 'claude' | 'gemini' | 'all' (stored in the plan profile, so it follows the plan store) ── */
@@ -206,23 +237,6 @@
         setProfile: function (obj) { Object.keys(obj).forEach(function (k) { plan.profile[k] = obj[k]; }); savePlan(); bindFields(); }
     };
     bindFields(); updateStatuses();
-
-    /* ── Copy buttons for prompt boxes ── */
-    Array.prototype.forEach.call(document.querySelectorAll('.prompt-box'), function (box) {
-        var btn = document.createElement('button');
-        btn.className = 'copy-btn';
-        btn.type = 'button';
-        btn.textContent = 'Копирай';
-        btn.addEventListener('click', function () {
-            var text = box.cloneNode(true);
-            var b = text.querySelector('.copy-btn');
-            if (b) b.remove();
-            var val = text.textContent.trim();
-            var done = function () { btn.textContent = 'Копирано ✓'; setTimeout(function () { btn.textContent = 'Копирай'; }, 1600); };
-            if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(val).then(done, function () {});
-        });
-        box.appendChild(btn);
-    });
 
     /* ── Video slots: <div class="video-slot" data-src="https://www.youtube-nocookie.com/embed/ID"> ── */
     Array.prototype.forEach.call(document.querySelectorAll('.video-slot'), function (slot) {
