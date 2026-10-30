@@ -180,11 +180,19 @@
 
     /* ── Chosen AI tool: 'chatgpt' | 'claude' | 'gemini' | 'all' (stored in the plan profile, so it follows the plan store) ── */
     function applyTool() { document.documentElement.dataset.tool = plan.profile.tool || 'all'; Array.prototype.forEach.call(document.querySelectorAll('[data-tool-set]'), function (b) { b.classList.toggle('on', b.dataset.toolSet === (plan.profile.tool || 'all')); }); }
+    function chanNotes() {
+        Array.prototype.forEach.call(document.querySelectorAll('[data-chan]'), function (el) {
+            var on = plan.profile[el.dataset.chan] === '1';
+            el.textContent = on ? '✓ Този канал е сред избраните от вас в Старт.' : 'Този канал не е сред избраните от вас в Старт. Модулът е по избор: направете го, ако искате да добавите канала.';
+            el.classList.toggle('ok', on);
+        });
+    }
+    planListeners.push(chanNotes);
     planListeners.push(applyTool);
     Array.prototype.forEach.call(document.querySelectorAll('[data-tool-set]'), function (b) {
         b.addEventListener('click', function () { plan.profile.tool = b.dataset.toolSet; savePlan(); });
     });
-    applyTool();
+    applyTool(); chanNotes();
     window.M4.getTool = function () { return plan.profile.tool || 'all'; };
 
     window.M4.plan = {

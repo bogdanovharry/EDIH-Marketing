@@ -633,3 +633,6 @@ html[data-tool="all"] .tool-block, html:not([data-tool]) .tool-block { border-le
 .chan-grid label { display: flex; gap: 8px; align-items: center; padding: 8px 12px; border-radius: 12px; border: 1.5px solid rgba(44,55,129,.18); background: rgba(255,255,255,.85); cursor: pointer; font-size: 14px; font-weight: 600; }
 .chan-grid input { accent-color: var(--red); width: 17px; height: 17px; }
 .svg-fig { margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-line); max-width: 420px; } .svg-fig svg { display: block; width: 100%; height: auto; }
+
+.chan-note { display: inline-block; margin: 2px 0 8px; padding: 6px 14px; border-radius: 12px; font-size: 13.5px; font-weight: 600; background: rgba(251,191,36,.15); border: 1px solid rgba(180,120,0,.3); color: #8a5a00; } .chan-note.ok { background: rgba(46,158,107,.12); border-color: rgba(46,158,107,.35); color: #1f7a52; }
+.landing-frame { width: 100%; height: 420px; border: 1px solid var(--glass-line); border-radius: 12px; background: #fff; }
