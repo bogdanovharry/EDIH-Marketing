@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модул 1 — Работно място</title>
+    <link rel="stylesheet" href="shared.css">
+</head>
+<body data-deck="00b-workspace">
+<div class="deck">
+
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag anim-up">Модул 1 · ≈ 30 мин</div>
+            <h1 class="anim-up anim-up-d1">Работно място: настройте своя ИИ асистент</h1>
+            <div class="divider anim-up anim-up-d2"></div>
+            <p class="lead anim-up anim-up-d3">Преди да създавате материали, настройвате инструмента така, че да е <strong>безопасен</strong> и да работи по вашите правила. Стъпките са за <strong>ChatGPT, Claude и Gemini</strong>. Изберете своя горе и следвайте само неговите блокове.</p>
+            <div class="cards anim-up anim-up-d3">
+                <div class="card"><h3>Ще научите</h3><ul><li>къде се изключва ползването на разговорите за обучение на модела</li><li>как се задават постоянни инструкции</li><li>как се прави проект или асистент със знание за вашия бизнес</li></ul></div>
+                <div class="card blue"><h3>Ще направите</h3><ul><li>настроен асистент с вашите стартови инструкции</li></ul></div>
+            </div>
+        </div>
+        <div class="big-number">A1</div>
+    </div>
+
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Избор</div>
+            <h2>Кой инструмент за какво</h2>
+            <div class="divider"></div>
+<p class="lead">Трите инструмента вършат голяма част от една и съща работа и можете да ползвате едни и същи промптове. Различават се най-вече във функциите около тях. <strong>Ако имате само един, започнете с него.</strong></p><table class="light-tbl"><thead><tr><th>Задача</th><th>ChatGPT</th><th>Claude</th><th>Gemini</th></tr></thead><tbody><tr><td>Текстове, имейли, планове</td><td>да</td><td>да</td><td>да</td></tr><tr><td>Изображения от текст</td><td>да (Images)</td><td>не генерира изображения от текст</td><td>да (Create images)</td></tr><tr><td>Документи, таблици, презентации като файл</td><td>вж. помощта</td><td>да: Word, Excel, PowerPoint, PDF (Capabilities)</td><td>вж. помощта</td></tr><tr><td>Едностранична страница, SVG, диаграма</td><td>вж. помощта (Canvas)</td><td>да (Artifacts)</td><td>вж. помощта (Canvas)</td></tr><tr><td>Проект/асистент със знание</td><td>Projects, GPTs</td><td>Projects</td><td>Gems (→ skills от ноември 2026)</td></tr></tbody></table><p class="checked">Проверено на 30.10.2026 по официални помощни страници (OpenAI, Anthropic, Google). „вж. помощта“ значи, че функцията не е потвърдена тук: проверете в помощния център на инструмента. Лимитите на безплатните планове не са публикувани и се менят.</p><div class="try"><strong>Практично правило:</strong> изображения във фотографски стил правете в ChatGPT или Gemini. Документи, таблици и диаграми като файл правете в Claude. Текстовете могат във всеки.</div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Стъпка 1 · Поверителност</div>
+            <h2>Изключете ненужното споделяне на разговорите</h2>
+            <div class="divider"></div>
+<div class="tool-switch noprint" role="group" aria-label="Инструмент"><button type="button" data-tool-set="chatgpt">ChatGPT</button><button type="button" data-tool-set="claude">Claude</button><button type="button" data-tool-set="gemini">Gemini</button><button type="button" data-tool-set="all">Сравни трите</button></div><p class="lead">Първата настройка е най-важната: <strong>дали разговорите ви се ползват за подобряване на модела</strong>. Правилата зависят от инструмента и плана. Проверете сами в настройките.</p><div class="tool-block" data-t="chatgpt"><h4>ChatGPT: изключете подобряването на модела</h4><ol><li>Отворете менюто на акаунта (горе или долу вляво) и изберете <kbd>Settings</kbd>.</li><li>Изберете <kbd>Data controls</kbd>.</li><li>Изключете <kbd>Improve the model for everyone</kbd> и натиснете <kbd>Done</kbd>.</li><li>За чувствителен разговор ползвайте <kbd>Temporary chat</kbd>: не се ползва за подобряване на моделите, докато е временен.</li></ol><span class="ver">Проверено 30.10.2026: <a href="https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt" target="_blank" rel="noopener">Data controls в ChatGPT</a>, <a href="https://help.openai.com/en/articles/8914046-temporary-chat-in-chatgpt" target="_blank" rel="noopener">Temporary chat</a>. Личните Free, Plus и Pro акаунти са с включено споделяне по подразбиране; Business, Enterprise и Edu не ползват данните за обучение по подразбиране. Изключването не изтрива чатовете.</span></div><div class="tool-block" data-t="claude"><h4>Claude: изключете подобряването на модела</h4><ol><li>Отворете менюто с името си и изберете <kbd>Settings</kbd>, после <kbd>Privacy</kbd>.</li><li>Под <kbd>Help improve our AI models</kbd> изключете превключвателя.</li><li>За чувствителен разговор ползвайте <kbd>Incognito chat</kbd>: не се ползва за подобряване, дори настройката да е включена.</li></ol><span class="ver">Проверено 30.10.2026: <a href="https://privacy.claude.com/en/articles/12109829-how-do-i-change-my-model-improvement-privacy-settings" target="_blank" rel="noopener">Промяна на настройките (privacy.claude.com)</a>, <a href="https://support.claude.com/en/articles/12260368-use-incognito-chats" target="_blank" rel="noopener">Incognito chats</a>. Изключването важи за бъдещи чатове: данни, вече включени в обучение, остават. Менюто може да е преименувано (напр. „Your Claude“).</span></div><div class="tool-block" data-t="gemini"><h4>Gemini: управлявайте активността</h4><ol><li>Влезте в gemini.google.com и отворете <kbd>Settings &amp; help</kbd>, после <kbd>Activity</kbd> (Gemini Apps Activity).</li><li>Изберете период за автоматично изтриване: по подразбиране е 18 месеца; може 3 или 36 месеца или без.</li><li>С <kbd>Delete</kbd> изтривате цялата или част от активността.</li><li>Ако изключите <kbd>Keep Activity</kbd>, разговорите се пазят до 72 часа за услугата.</li></ol><span class="ver">Проверено 30.10.2026: <a href="https://support.google.com/gemini/answer/13278892" target="_blank" rel="noopener">Управление на активността в Gemini Apps</a>. Прегледани от хора разговори могат да се пазят по-дълго и не се изтриват с активността.</span></div><div class="try"><strong>Не разчитайте само на настройката.</strong> Не въвеждайте лични данни, договори и пароли, независимо от нея. Следва Модул 2.</div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Стъпка 2 · Инструкции и проект</div>
+            <h2>Дайте на асистента постоянен контекст</h2>
+            <div class="divider"></div>
+<div class="tool-switch noprint" role="group" aria-label="Инструмент"><button type="button" data-tool-set="chatgpt">ChatGPT</button><button type="button" data-tool-set="claude">Claude</button><button type="button" data-tool-set="gemini">Gemini</button><button type="button" data-tool-set="all">Сравни трите</button></div><p class="lead">Постоянните инструкции казват на асистента кой сте, как пишете и какво не прави: така не ги повтаряте във всеки чат.</p><div class="tool-block" data-t="chatgpt"><h4>ChatGPT: инструкции за всички чатове и за проект</h4><ol><li><kbd>Settings</kbd> → <kbd>Personalization</kbd> → <kbd>Custom instructions</kbd>: поставете стартовите инструкции.</li><li>В безплатния план лимитът е 1 500 знака. По-дълъг текст сложете в проект.</li><li><kbd>Projects</kbd>: нов проект с инструкции и файлове (на Free до 5 файла). Можете да изберете паметта на проекта да е само за него.</li></ol><span class="ver">Проверено 30.10.2026: release notes и помощни статии за <a href="https://help.openai.com/en/articles/8096356-chatgpt-custom-instructions" target="_blank" rel="noopener">Custom instructions</a> и <a href="https://help.openai.com/en/articles/10169521-projects-in-chatgpt" target="_blank" rel="noopener">Projects</a>. Лимитите по план се менят.</span></div><div class="tool-block" data-t="claude"><h4>Claude: инструкции за проект</h4><ol><li>Създайте <kbd>Project</kbd> (на Free до 5 проекта).</li><li>Натиснете <kbd>Set project instructions</kbd>, поставете стартовите инструкции и <kbd>Save instructions</kbd>.</li><li>В знанието на проекта натиснете <kbd>+</kbd> и качете файлове (до 30 MB всеки): важат за всички чатове в проекта.</li></ol><span class="ver">Проверено 30.10.2026: <a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank" rel="noopener">Създаване и управление на проекти</a>. Контекстът не се пренася между чатове, освен ако е в знанието на проекта.</span></div><div class="tool-block" data-t="gemini"><h4>Gemini: инструкции и Gem</h4><ol><li>Лични инструкции: <kbd>Instructions for Gemini</kbd> в раздела за персонализация (Personal Intelligence); не важат във всички функции, напр. в Gems.</li><li><kbd>Gems</kbd>: създаване и редактиране само в уеб приложението, с инструкции и файлове за знание от устройството.</li><li>Файлове от Google Drive изискват включена <kbd>Keep Activity</kbd> и свързан Google Workspace.</li></ol><span class="ver">Проверено 30.10.2026: <a href="https://support.google.com/gemini/answer/15235603" target="_blank" rel="noopener">Съвети за Gems</a>, <a href="https://support.google.com/gemini/answer/16598625" target="_blank" rel="noopener">Лични инструкции</a>. <b>Внимание:</b> от ноември 2026 Gems се заменят със „skills“ за личните акаунти (работните и учебните след 2027). Менюто може да е различно: потърсете „Gems“ или „skills“ в помощта.</span></div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Практическа задача</div>
+            <h2>Стартови инструкции за вашия асистент</h2>
+            <div class="divider"></div>
+<div class="split"><div><p class="lead">Ще създадете <strong>стартови инструкции</strong> и ще ги сложите в инструмента си. Те ще се ползват в целия курс.</p><ol class="steps"><li>Копирайте промпта и го пуснете в избрания инструмент.</li><li>Прочетете резултата, махнете каквото не е вярно и скъсете до около 150 думи.</li><li>Поставете го според таба на вашия инструмент (Custom instructions, Project instructions или Instructions for Gemini / Gem).</li><li>Тествайте: „Напиши 2 изречения за [нещо от вашата дейност]“. Звучи ли като вас? Измисля ли цени и факти?</li><li>Запазете стартовите инструкции долу.</li></ol><div class="try"><strong>Добър резултат:</strong> кратки инструкции: кой сте, за кого пишете, тон, правила („питай ме, ако липсва информация“) и какво избягвате. Асистентът не измисля цени, срокове и факти.</div></div><div><div class="prompt-box" data-p="sme">Помогни ми да напиша стартови инструкции (до 150 думи) за асистент, който ми помага с маркетинга на {{profile.name|име}} ({{profile.offer|какво предлагате}}). Аудитория: {{profile.audience|аудитория}}. Първо ми задай до 5 въпроса (тон, какво никога не казваме, примери за мои текстове). После напиши инструкциите на български: кой съм, за кого пиша, тон, правила и какво да избягваш. Включи правилото: „Ако ти липсва информация (цена, срок, факт), питай ме. Не гадай и не измисляй.“</div><div class="prompt-box" data-p="public">Помогни ми да напиша стартови инструкции (до 150 думи) за асистент, който ми помага с комуникацията на {{profile.name|име}} ({{profile.offer|какво предлагате}}). Аудитория: {{profile.audience|аудитория}}. Първо ми задай до 5 въпроса (тон, какво никога не казваме, примери за наши текстове). После напиши инструкциите на български: кои сме, за кого пишем, тон, правила и какво да избягваме. Включи правилата: „Ако ти липсва информация (срок, такса, телефон), питай. Не гадай и не измисляй. Не използвай лични данни.“</div><div class="plan-save"><label>Стартови инструкции (за вашия инструмент)</label><textarea data-plan-section="setup" placeholder="Поставете тук резултата от ИИ (по възможност редактиран от вас)"></textarea><div class="plan-status" data-plan-status="setup"></div></div><p class="privacy">Данните остават само в този браузър. Не въвеждайте лични данни на клиенти или граждани.</p></div></div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Обобщение</div>
+            <h2>Какво направихте</h2>
+            <div class="divider"></div>
+<ol class="steps"><li>Изключихте или ограничихте споделянето на разговорите за обучение (според инструмента).</li><li>Добавихте постоянни инструкции или проект.</li><li>Знаете коя функция е за какво и къде да я потърсите в помощта.</li><li>Следва Модул 2: какви данни въвеждаме и какви правила пишем за екипа.</li></ol><p class="lead" style="margin-top:14px;"><span class="hint">Малък речник: помислете какво значи думата, после кликнете</span></p><div class="rev-grid"><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>Проект</div><div class="rev-a">Място с инструкции и файлове за всички ваши чатове по една тема.</div></div><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>Постоянни инструкции</div><div class="rev-a">Указания, които се прилагат във всеки чат.</div></div><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>Временен / инкогнито чат</div><div class="rev-a">Чат, който не се ползва за подобряване на модела.</div></div><div class="rev" role="button" tabindex="0"><div class="rev-q"><span class="ic">📘</span>Знание на проекта</div><div class="rev-a">Файлове, които асистентът ползва като източник.</div></div></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="nav-bar">
+    <div class="nav-progress"></div>
+    <div class="nav-info mono"></div>
+    <div class="nav-buttons">
+        <button class="nav-btn" data-nav="prev" aria-label="Назад">&#8592;</button>
+        <button class="nav-btn" data-nav="next" aria-label="Напред">&#8594;</button>
+    </div>
+</div>
+<script src="shared.js"></script>
+</body>
+</html>

@@ -73,6 +73,25 @@
                     <div><label for="pf-chg">Каква промяна искате?</label><input id="pf-chg" data-plan-profile="change" placeholder="например: повече поръчки"></div>
                 </div>
             </div>
+            <div class="plan-form" style="margin-top:12px">
+                <div><label>Кой ИИ асистент ще ползвате основно?</label>
+                    <div class="tool-chips">
+                        <button type="button" class="chip" data-tool-set="chatgpt">ChatGPT</button>
+                        <button type="button" class="chip" data-tool-set="claude">Claude</button>
+                        <button type="button" class="chip" data-tool-set="gemini">Gemini</button>
+                        <button type="button" class="chip" data-tool-set="all">Искам да видя трите</button>
+                    </div>
+                    <div class="plan-status">Стъпките в курса ще са за избрания инструмент. Можете да го смените по всяко време.</div>
+                </div>
+                <div><label>Кои канали ще развивате първо? (1–2)</label>
+                    <div class="chan-grid">
+                        <label><input type="checkbox" data-plan-flag="ch_social"> Социални мрежи</label>
+                        <label><input type="checkbox" data-plan-flag="ch_google"> Google профил и сайт</label>
+                        <label><input type="checkbox" data-plan-flag="ch_email"> Имейл и съобщения</label>
+                        <label><input type="checkbox" data-plan-flag="ch_ads"> Платена реклама</label>
+                    </div>
+                </div>
+            </div>
             <p class="privacy">Данните остават само в този браузър и не се изпращат никъде. Не въвеждайте лични данни на клиенти или граждани.</p>
             <button type="button" class="fill-demo" id="fillDemo">Попълни с примера</button>
             <button type="button" class="btn" onclick="document.querySelector('[data-nav=&quot;next&quot;]').click()">Продължи &#8594;</button>
@@ -101,7 +120,7 @@
             <p class="subtitle" style="margin-top:10px; font-size:15px;">
                 Курсът не заменя вашата преценка: ИИ е помощник, а отговорността за съдържанието и данните остава у вас.
             </p>
-            <button type="button" class="btn" onclick="parent.postMessage({type:'next-section-arrow'}, '*')">Към Тема 1: Картата на ИИ през 2026 &#8594;</button>
+            <button type="button" class="btn" onclick="parent.postMessage({type:'next-section-arrow'}, '*')">Към Модул 1: Работно място &#8594;</button>
         </div>
     </div>
 

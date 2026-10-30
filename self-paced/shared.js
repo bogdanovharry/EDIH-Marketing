@@ -92,16 +92,20 @@
        Lives in localStorage ('m4-plan'); inside the shell (index.html) it is also mirrored in the parent window,
        because file:// pages do not always share storage. Newer timestamp wins. */
     var SECTIONS = [
-        { key: 'audit', title: 'Профил и изходно положение', topic: 1 },
-        { key: 'voice', title: 'Глас и тон', topic: 2 },
-        { key: 'audience', title: 'Аудитория', topic: 3 },
-        { key: 'rivals', title: 'Аналози и конкуренти', topic: 3 },
-        { key: 'goal', title: 'Цел и канали', topic: 3 },
-        { key: 'content', title: 'Съдържание и календар за 30 дни', topic: 4 },
-        { key: 'auto', title: 'Автоматизации и реклама', topic: 5 },
-        { key: 'kpi', title: 'Показатели и мерене', topic: 6 },
-        { key: 'policy', title: 'Правила за ИИ и данни', topic: 7 },
-        { key: 'next', title: 'Следващи стъпки и рискове', topic: 7 }
+        { key: 'audit', n: 1, title: 'Профил и изходно положение' },
+        { key: 'offer', n: 2, title: 'Предложение и позициониране' },
+        { key: 'audience', n: 3, title: 'Аудитория и път на клиента' },
+        { key: 'rivals', n: 4, title: 'Конкуренти и аналози' },
+        { key: 'goal', n: 5, title: 'Цел и показатели' },
+        { key: 'channels', n: 6, title: 'Канали и роля на всеки' },
+        { key: 'voice', n: 7, title: 'Бранд кит: глас, цветове, стил' },
+        { key: 'content', n: 8, title: 'Съдържание и календар за 30 дни' },
+        { key: 'web', n: 9, title: 'Google профил и сайт' },
+        { key: 'email', n: 10, title: 'Имейл и съобщения' },
+        { key: 'ads', n: 11, title: 'Реклама (по избор)', optional: true },
+        { key: 'auto', n: 12, title: 'Бюджет, време и автоматизации' },
+        { key: 'kpi', n: 13, title: 'Мерене и седмично табло' },
+        { key: 'policy', n: 14, title: 'Правила за ИИ, рискове и следващи стъпки', also: ['next', 'training'] }
     ];
     var plan = loadPlan();
     var planListeners = [];
@@ -129,7 +133,14 @@
     if (window.parent !== window) window.parent.postMessage({ type: 'plan-get' }, '*');
 
     var timers = {};
+    function bindFlags() {
+        Array.prototype.forEach.call(document.querySelectorAll('[data-plan-flag]'), function (el) { el.checked = plan.profile[el.dataset.planFlag] === '1'; });
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('[data-plan-flag]'), function (el) {
+        el.addEventListener('change', function () { plan.profile[el.dataset.planFlag] = el.checked ? '1' : ''; savePlan(); });
+    });
     function bindFields() {
+        bindFlags();
         Array.prototype.forEach.call(document.querySelectorAll('[data-plan-profile], [data-plan-section]'), function (el) {
             if (document.activeElement === el) return;
             var v = el.hasAttribute('data-plan-profile') ? plan.profile[el.dataset.planProfile] : plan.sections[el.dataset.planSection];
@@ -166,6 +177,15 @@
         };
         planListeners.push(render); render();
     });
+
+    /* ── Chosen AI tool: 'chatgpt' | 'claude' | 'gemini' | 'all' (stored in the plan profile, so it follows the plan store) ── */
+    function applyTool() { document.documentElement.dataset.tool = plan.profile.tool || 'all'; Array.prototype.forEach.call(document.querySelectorAll('[data-tool-set]'), function (b) { b.classList.toggle('on', b.dataset.toolSet === (plan.profile.tool || 'all')); }); }
+    planListeners.push(applyTool);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-tool-set]'), function (b) {
+        b.addEventListener('click', function () { plan.profile.tool = b.dataset.toolSet; savePlan(); });
+    });
+    applyTool();
+    window.M4.getTool = function () { return plan.profile.tool || 'all'; };
 
     window.M4.plan = {
         sections: SECTIONS,
