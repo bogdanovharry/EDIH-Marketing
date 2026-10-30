@@ -632,3 +632,4 @@ html[data-tool="all"] .tool-block, html:not([data-tool]) .tool-block { border-le
 .chan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px; margin-top: 6px; max-width: 760px; }
 .chan-grid label { display: flex; gap: 8px; align-items: center; padding: 8px 12px; border-radius: 12px; border: 1.5px solid rgba(44,55,129,.18); background: rgba(255,255,255,.85); cursor: pointer; font-size: 14px; font-weight: 600; }
 .chan-grid input { accent-color: var(--red); width: 17px; height: 17px; }
+.svg-fig { margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-line); max-width: 420px; } .svg-fig svg { display: block; width: 100%; height: auto; }

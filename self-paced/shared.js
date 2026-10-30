@@ -98,7 +98,7 @@
         { key: 'rivals', n: 4, title: 'Конкуренти и аналози' },
         { key: 'goal', n: 5, title: 'Цел и показатели' },
         { key: 'channels', n: 6, title: 'Канали и роля на всеки' },
-        { key: 'voice', n: 7, title: 'Бранд кит: глас, цветове, стил' },
+        { key: 'voice', n: 7, title: 'Бранд кит: глас, цветове, стил', also: ['visuals'] },
         { key: 'content', n: 8, title: 'Съдържание и календар за 30 дни' },
         { key: 'web', n: 9, title: 'Google профил и сайт' },
         { key: 'email', n: 10, title: 'Имейл и съобщения' },
