@@ -182,7 +182,7 @@
         while ((m = re.exec(tpl))) {
             if (m.index > last) body.appendChild(document.createTextNode(tpl.slice(last, m.index)));
             var f = document.createElement('span'); f.className = 'pf'; f.contentEditable = 'true'; f.spellcheck = false;
-            f.dataset.ph = (m[3] || m[2]).trim(); f.dataset.kind = m[1]; f.dataset.key = m[2];
+            var hp = (m[3] || m[2]).split('|'); f.dataset.ph = hp[0].trim(); if (hp[1]) { f.textContent = hp[1].trim(); f.dataset.def = '1'; } f.dataset.kind = m[1]; f.dataset.key = m[2];
             f.addEventListener('input', function () { this.dataset.dirty = '1'; });
             body.appendChild(f); fields.push(f); last = re.lastIndex;
         }
@@ -239,6 +239,15 @@
         setProfile: function (obj) { Object.keys(obj).forEach(function (k) { plan.profile[k] = obj[k]; }); savePlan(); bindFields(); }
     };
     bindFields(); updateStatuses();
+
+
+    /* quick follow-up chips: [data-copy] copies its text */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-copy]'), function (b) {
+        b.addEventListener('click', function () {
+            var old = b.textContent;
+            if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(b.dataset.copy).then(function () { b.textContent = 'Копирано ✓'; setTimeout(function () { b.textContent = old; }, 1400); }, function () {});
+        });
+    });
 
     /* ── Video slots: <div class="video-slot" data-src="https://www.youtube-nocookie.com/embed/ID"> ── */
     Array.prototype.forEach.call(document.querySelectorAll('.video-slot'), function (slot) {

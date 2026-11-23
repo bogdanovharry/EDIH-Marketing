@@ -682,3 +682,9 @@ html:not([data-profile]) [data-p="public"] { display: none !important; }
 .steps-row ol.steps li::before { left: 12px !important; top: 12px !important; }
 /* no store/municipality demo: everyone works on their own data */
 #fillDemo, #srcSeg { display: none !important; }
+
+.follow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; font-size: 14px; color: rgba(0,0,0,.6); }
+.follow button { padding: 6px 12px; border-radius: 99px; border: 1px solid rgba(44,55,129,.25); background: #fff; color: var(--blue); font: 600 13px 'DM Sans', sans-serif; cursor: pointer; }
+.follow button:hover { background: var(--blue); color: #fff; }
+
+#demoAll { display: none !important; }

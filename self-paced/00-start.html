@@ -22,7 +22,7 @@
             </p>
             <div class="cards anim-up anim-up-d3">
                 <div class="card"><div class="num">15</div><h3>модула</h3><p>Първите два отнемат около 20 минути и веднага виждате резултат. Общо ≈ 4 часа в 15 кратки модула. Всеки завършва с готов материал. Може да спирате и да продължавате по-късно.</p></div>
-                <div class="card blue"><div class="num">▶</div><h3>Видео + слайдове</h3><p>Кратко видео и слайдове в началото на всеки модул.</p></div>
+                <div class="card blue"><div class="num">▶</div><h3>Кратки стъпки</h3><p>Всеки модул е 2–3 екрана: какво правите, промпт за копиране и запис.</p></div>
                 <div class="card"><div class="num">✎</div><h3>Практика</h3><p>Във всеки модул копирате промпт, заменяте данните със свои и получавате готов материал.</p></div>
             </div>
         </div>
@@ -59,7 +59,7 @@
             <div class="tag">Вашият проект · 3 мин</div>
             <h2>Опишете вашата фирма или организация</h2>
             <div class="divider"></div>
-            <p class="lead">Описвате фирмата или организацията си веднъж. Тези данни се вмъкват сами в промптовете на всички теми, а резултатите от задачите се събират в <strong>един цялостен маркетингов план</strong>, който свалявате в края.</p>
+            <p class="lead">Описвате фирмата или организацията си веднъж. Тези данни влизат във <strong>визитката на вашия ИИ проект</strong> и вече не ги пишете във всеки промпт. Резултатите от задачите се събират в един маркетингов план, който свалявате в края.</p>
             <div class="plan-form">
                 <div><label for="pf-name">Име на фирмата или организацията</label><input id="pf-name" data-plan-profile="name" placeholder="например: онлайн магазин за ..."></div>
                 <div><label for="pf-offer">Какво предлагате?</label><textarea id="pf-offer" data-plan-profile="offer" rows="2" placeholder="продукти, услуги, кратко описание"></textarea></div>
@@ -72,25 +72,6 @@
                     <div><label for="pf-chg">Каква промяна искате?</label><input id="pf-chg" data-plan-profile="change" placeholder="например: повече поръчки"></div>
                 </div>
             </div>
-            <div class="plan-form" style="margin-top:12px">
-                <div><label>Кой ИИ инструмент ще ползвате основно?</label>
-                    <div class="tool-chips">
-                        <button type="button" class="chip" data-tool-set="chatgpt">ChatGPT (препоръчваме)</button>
-                        <button type="button" class="chip" data-tool-set="gemini">Gemini (препоръчваме)</button>
-                        <button type="button" class="chip" data-tool-set="claude">Claude или друг</button>
-                        <button type="button" class="chip" data-tool-set="all">Искам да видя всички</button>
-                    </div>
-                    <div class="plan-status">ChatGPT и Gemini са най-подходящи за курса, защото правят и изображения, и графики, и работещи страници. Работите сами в отделен прозорец с инструмента: копирате промпта оттук и заменяте данните със свои. Изборът може да се смени по всяко време.</div>
-                </div>
-                <div><label>Кои канали ще развивате първо? (1–2)</label>
-                    <div class="chan-grid">
-                        <label><input type="checkbox" data-plan-flag="ch_social"> Социални мрежи</label>
-                        <label><input type="checkbox" data-plan-flag="ch_google"> Google профил и сайт</label>
-                        <label><input type="checkbox" data-plan-flag="ch_email"> Имейл и съобщения</label>
-                        <label><input type="checkbox" data-plan-flag="ch_ads"> Платена реклама</label>
-                    </div>
-                </div>
-            </div>
             <p class="privacy">Данните остават само в този браузър и не се изпращат никъде. Не въвеждайте лични данни на клиенти или граждани.</p>
             <button type="button" class="fill-demo" id="fillDemo">Попълни с примера</button>
             <button type="button" class="btn" onclick="document.querySelector('[data-nav=&quot;next&quot;]').click()">Продължи &#8594;</button>
@@ -98,32 +79,7 @@
     </div>
 
     <!-- 3: Experience self-check -->
-    <div class="slide">
-        <div class="accent-corner"></div>
-        <div class="slide-number"></div>
-        <div class="content-block">
-            <div class="tag">Преди да започнем</div>
-            <h2>Къде сте сега?</h2>
-            <div class="divider"></div>
-            <p class="subtitle">Отбележете какво вече правите. Нищо не се записва никъде — това е само за вас.</p>
-            <ul class="checklist">
-                <li><label><input type="checkbox"> Използвам чат асистент (ChatGPT, Claude, Gemini, Copilot) поне веднъж седмично</label></li>
-                <li><label><input type="checkbox"> Пиша промптове с цел, контекст и формат, а не само кратък въпрос</label></li>
-                <li><label><input type="checkbox"> Генерирал/а съм изображения или видео с ИИ за работа</label></li>
-                <li><label><input type="checkbox"> Имам план за съдържание и следя резултатите от публикациите си</label></li>
-                <li><label><input type="checkbox"> Знам какви данни не бива да въвеждам в ИИ инструменти</label></li>
-            </ul>
-            <p class="subtitle" style="margin-top:16px; font-size:15px;">
-                0–2 отметки: започнете от Тема 1 и не прескачайте. 3–5 отметки: можете да ускорите Теми 1–2 и да се фокусирате върху 3–6.
-            </p>
-            <p class="subtitle" style="margin-top:10px; font-size:15px;">
-                Курсът не заменя вашата преценка: ИИ е помощник, а отговорността за съдържанието и данните остава у вас.
-            </p>
-            <button type="button" class="btn" onclick="parent.postMessage({type:'next-section-arrow'}, '*')">Към Модул 1: Работно място &#8594;</button>
-        </div>
     </div>
-
-</div>
 
 <div class="nav-bar">
     <div class="nav-progress"></div>
