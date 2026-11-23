@@ -680,3 +680,5 @@ html:not([data-profile]) [data-p="public"] { display: none !important; }
 @media (max-width: 760px) { .steps-row ol.steps { grid-template-columns: 1fr; } }
 .steps-row ol.steps li { position: relative; padding-left: 52px; min-height: 56px; }
 .steps-row ol.steps li::before { left: 12px !important; top: 12px !important; }
+/* no store/municipality demo: everyone works on their own data */
+#fillDemo, #srcSeg { display: none !important; }
