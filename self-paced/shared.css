@@ -657,3 +657,5 @@ html[data-tool="all"] .tool-block, html:not([data-tool-x]) .tool-block-none { bo
 
 .slide .result.real { max-height: calc(100vh - 330px); overflow-y: auto; }
 @media print { body.print-all .slide .result.real { max-height: none !important; overflow: visible !important; } }
+
+.ex-area { display: inline-block; margin-right: 8px; padding: 1px 8px; border-radius: 99px; background: rgba(44,55,129,.1); color: var(--blue); font: 700 11px 'Space Mono', monospace; letter-spacing: .5px; text-transform: uppercase; }
