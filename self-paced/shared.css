@@ -692,3 +692,25 @@ html:not([data-profile]) [data-p="public"] { display: none !important; }
 ul.theory { list-style: none; padding: 0; display: grid; gap: 10px; margin-top: 8px; }
 ul.theory li { padding: 14px 18px 14px 44px; border-radius: 14px; background: rgba(255,255,255,.75); border: 1px solid rgba(44,55,129,.12); font-size: 18px; line-height: 1.5; position: relative; }
 ul.theory li::before { content: "\2713"; position: absolute; left: 16px; top: 13px; color: #2e9e6b; font-weight: 800; }
+
+/* theory components */
+
+.bk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:10px}
+.bk-card{padding:16px;border-radius:16px;background:rgba(255,255,255,.85);border:1px solid rgba(44,55,129,.14);box-shadow:var(--shadow-soft)}
+.bk-card b{display:block;font-size:17px;margin:6px 0 4px;color:var(--blue)}
+.bk-card span{font-size:14.5px;line-height:1.45;color:rgba(0,0,0,.72)}
+.bk-card i{font-style:normal;font-size:26px}
+.formula{margin:10px 0;padding:14px 18px;border-radius:14px;background:linear-gradient(135deg,rgba(220,78,64,.10),rgba(99,102,241,.12));font:600 17px 'DM Sans',sans-serif;color:#1b2040}
+.formula em{font-style:normal;color:var(--red)}
+.sw-row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.sw{width:128px;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,.1);background:#fff}
+.sw div{height:64px}.sw p{margin:0;padding:8px 10px;font-size:12.5px;line-height:1.35}.sw p b{display:block;font-size:13px}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.cols3>div{padding:16px;border-radius:16px;background:rgba(255,255,255,.85);border:1px solid rgba(44,55,129,.14)}
+.cols3 h4{font:700 12px 'Space Mono',monospace;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.cols3 li{font-size:15px;line-height:1.45;margin-bottom:4px}
+.mist{margin-top:12px;padding:12px 16px;border-radius:14px;background:rgba(220,78,64,.08);border-left:5px solid var(--red);font-size:15px}
+.xp-cmp{display:flex;gap:18px;justify-content:center;margin-top:14px}
+.xp-cmp>div{flex:1;max-width:330px;padding:14px;border-radius:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;text-align:center}
+.xp-cmp small{display:block;opacity:.8;margin-top:6px}
+.xp-sw{display:flex;gap:6px;justify-content:center;margin:8px 0}.xp-sw u{width:34px;height:34px;border-radius:8px;display:block}
