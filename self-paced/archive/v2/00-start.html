@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Старт — Модул IV</title>
+    <link rel="stylesheet" href="shared.css">
+</head>
+<body data-deck="00-start">
+<div class="deck">
+
+    <!-- 1: Welcome -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag anim-up">Модул IV · Самостоятелно обучение</div>
+            <h1 class="anim-up anim-up-d1">ИИ в работата ви и в дигиталния маркетинг</h1>
+            <div class="divider anim-up anim-up-d2"></div>
+            <p class="subtitle anim-up anim-up-d3">
+                Научавате как се прави дигитален маркетинг с ИИ, стъпка по стъпка: от стратегия и аудитория до готови публикации, изображения, имейли, реклама и измерване. Работите сами в ChatGPT или Gemini; всеки модул завършва с готов материал за вашия бизнес или организация.
+            </p>
+            <div class="cards anim-up anim-up-d3">
+                <div class="card"><div class="num">14</div><h3>модула</h3><p>≈ 9 часа общо в 14 кратки модула (по 30–50 мин). Каналните модули 8–11 са по избор според вашите канали. Може да спирате и да продължавате по-късно.</p></div>
+                <div class="card blue"><div class="num">▶</div><h3>Видео + слайдове</h3><p>Кратко видео и слайдове в началото на всеки модул.</p></div>
+                <div class="card"><div class="num">✎</div><h3>Практика</h3><p>Във всеки модул копирате промпт, заменяте данните със свои и получавате готов материал.</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2: Profile -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Персонализация</div>
+            <h2>Кой сте вие?</h2>
+            <div class="divider"></div>
+            <p class="subtitle">Изберете профил — примерите, промптовете и ограниченията ще са съобразени с него. Можете да го смените по всяко време от менюто.</p>
+            <div class="profile-options" role="radiogroup" aria-label="Профил">
+                <button type="button" class="profile-option" data-profile="sme" role="radio" aria-checked="false">
+                    <h3>Малък и среден бизнес</h3>
+                    <p>Магазин, услуга, хотел, производство, свободна професия. Фокус: повече клиенти и продажби с малък бюджет и малко време.</p>
+                </button>
+                <button type="button" class="profile-option" data-profile="public" role="radio" aria-checked="false">
+                    <h3>Публична организация</h3>
+                    <p>Община, институция, НПО, училище, читалище. Фокус: ясна комуникация с гражданите, прозрачност и отговорно използване на ИИ.</p>
+                </button>
+            </div>
+            <button type="button" class="btn" id="goBtn" disabled>Продължи &#8594;</button>
+        </div>
+    </div>
+
+    <!-- 2b: Project (profile data for the marketing plan) -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Вашият проект · 3 мин</div>
+            <h2>Опишете вашата фирма или организация</h2>
+            <div class="divider"></div>
+            <p class="lead">Описвате фирмата или организацията си веднъж. Тези данни се вмъкват сами в промптовете на всички теми, а резултатите от задачите се събират в <strong>един цялостен маркетингов план</strong>, който свалявате в края.</p>
+            <div class="plan-form">
+                <div><label for="pf-name">Име на фирмата или организацията</label><input id="pf-name" data-plan-profile="name" placeholder="например: онлайн магазин за ..."></div>
+                <div><label for="pf-offer">Какво предлагате?</label><textarea id="pf-offer" data-plan-profile="offer" rows="2" placeholder="продукти, услуги, кратко описание"></textarea></div>
+                <div class="row2">
+                    <div><label for="pf-place">Къде</label><input id="pf-place" data-plan-profile="place" placeholder="град, регион или онлайн"></div>
+                    <div><label for="pf-aud">Основна аудитория</label><input id="pf-aud" data-plan-profile="audience" placeholder="кои са клиентите или гражданите"></div>
+                </div>
+                <div class="row2">
+                    <div><label for="pf-ch">Канали, които ползвате</label><input id="pf-ch" data-plan-profile="channels" placeholder="сайт, Facebook, Instagram..."></div>
+                    <div><label for="pf-chg">Каква промяна искате?</label><input id="pf-chg" data-plan-profile="change" placeholder="например: повече поръчки"></div>
+                </div>
+            </div>
+            <div class="plan-form" style="margin-top:12px">
+                <div><label>Кой ИИ инструмент ще ползвате основно?</label>
+                    <div class="tool-chips">
+                        <button type="button" class="chip" data-tool-set="chatgpt">ChatGPT (препоръчваме)</button>
+                        <button type="button" class="chip" data-tool-set="gemini">Gemini (препоръчваме)</button>
+                        <button type="button" class="chip" data-tool-set="claude">Claude или друг</button>
+                        <button type="button" class="chip" data-tool-set="all">Искам да видя всички</button>
+                    </div>
+                    <div class="plan-status">ChatGPT и Gemini са най-подходящи за курса, защото правят и изображения, и графики, и работещи страници. Работите сами в отделен прозорец с инструмента: копирате промпта оттук и заменяте данните със свои. Изборът може да се смени по всяко време.</div>
+                </div>
+                <div><label>Кои канали ще развивате първо? (1–2)</label>
+                    <div class="chan-grid">
+                        <label><input type="checkbox" data-plan-flag="ch_social"> Социални мрежи</label>
+                        <label><input type="checkbox" data-plan-flag="ch_google"> Google профил и сайт</label>
+                        <label><input type="checkbox" data-plan-flag="ch_email"> Имейл и съобщения</label>
+                        <label><input type="checkbox" data-plan-flag="ch_ads"> Платена реклама</label>
+                    </div>
+                </div>
+            </div>
+            <p class="privacy">Данните остават само в този браузър и не се изпращат никъде. Не въвеждайте лични данни на клиенти или граждани.</p>
+            <button type="button" class="fill-demo" id="fillDemo">Попълни с примера</button>
+            <button type="button" class="btn" onclick="document.querySelector('[data-nav=&quot;next&quot;]').click()">Продължи &#8594;</button>
+        </div>
+    </div>
+
+    <!-- 3: Experience self-check -->
+    <div class="slide">
+        <div class="accent-corner"></div>
+        <div class="slide-number"></div>
+        <div class="content-block">
+            <div class="tag">Преди да започнем</div>
+            <h2>Къде сте сега?</h2>
+            <div class="divider"></div>
+            <p class="subtitle">Отбележете какво вече правите. Нищо не се записва никъде — това е само за вас.</p>
+            <ul class="checklist">
+                <li><label><input type="checkbox"> Използвам чат асистент (ChatGPT, Claude, Gemini, Copilot) поне веднъж седмично</label></li>
+                <li><label><input type="checkbox"> Пиша промптове с цел, контекст и формат, а не само кратък въпрос</label></li>
+                <li><label><input type="checkbox"> Генерирал/а съм изображения или видео с ИИ за работа</label></li>
+                <li><label><input type="checkbox"> Имам план за съдържание и следя резултатите от публикациите си</label></li>
+                <li><label><input type="checkbox"> Знам какви данни не бива да въвеждам в ИИ инструменти</label></li>
+            </ul>
+            <p class="subtitle" style="margin-top:16px; font-size:15px;">
+                0–2 отметки: започнете от Тема 1 и не прескачайте. 3–5 отметки: можете да ускорите Теми 1–2 и да се фокусирате върху 3–6.
+            </p>
+            <p class="subtitle" style="margin-top:10px; font-size:15px;">
+                Курсът не заменя вашата преценка: ИИ е помощник, а отговорността за съдържанието и данните остава у вас.
+            </p>
+            <button type="button" class="btn" onclick="parent.postMessage({type:'next-section-arrow'}, '*')">Към Модул 1: Работно място &#8594;</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="nav-bar">
+    <div class="nav-progress"></div>
+    <div class="nav-info mono"></div>
+    <div class="nav-buttons">
+        <button class="nav-btn" data-nav="prev" aria-label="Назад">&#8592;</button>
+        <button class="nav-btn" data-nav="next" aria-label="Напред">&#8594;</button>
+    </div>
+</div>
+
+<script src="shared.js"></script>
+<script>
+    (function () {
+        var options = document.querySelectorAll('.profile-option');
+        var go = document.getElementById('goBtn');
+        function mark(p) {
+            options.forEach(function (o) {
+                var on = o.dataset.profile === p;
+                o.classList.toggle('selected', on);
+                o.setAttribute('aria-checked', on ? 'true' : 'false');
+            });
+            go.disabled = !p;
+        }
+        mark(window.M4.getProfile());
+        options.forEach(function (o) {
+            o.addEventListener('click', function () { window.M4.setProfile(o.dataset.profile); mark(o.dataset.profile); });
+        });
+        go.addEventListener('click', function () { document.querySelector('[data-nav="next"]').click(); });
+    })();
+</script>
+<script>
+    (function () {
+        var DEMO = {"sme": {"name": "Зелен кът", "offer": "Онлайн магазин за стайни растения, саксии и торове с доставка с куриер в цялата страна. Екип: собственик и помощник.", "place": "Цяла България (онлайн)", "audience": "Хора на 25–45 години, които живеят в апартамент и искат растения, които оцеляват, както и купувачи на подаръци.", "channels": "Сайт, Facebook страница, Instagram", "change": "Повече поръчки от нови клиенти през сайта"}, "public": {"name": "Община Габрово (илюстративен сценарий)", "offer": "Услуги за граждани и бизнеса. Кампания за популяризиране на електронните административни услуги.", "place": "Габрово", "audience": "Жители на общината, включително възрастни и заети хора, които нямат време за гише.", "channels": "Фейсбук страница, уебсайт, информационни съобщения", "change": "Повече хора да ползват електронни услуги вместо да чакат на гише"}};
+        var LABEL = {"sme": "Зелен кът (онлайн магазин)", "public": "Община Габрово (илюстративен сценарий)"};
+        var btn = document.getElementById('fillDemo');
+        function refresh() { var p = window.M4.getProfile() || 'sme'; btn.textContent = 'Попълни с примера: ' + LABEL[p]; }
+        btn.addEventListener('click', function () { window.M4.plan.setProfile(DEMO[window.M4.getProfile() || 'sme']); });
+        refresh();
+        window.addEventListener('message', function (e) { if (e.data && e.data.type === 'profile') setTimeout(refresh, 30); });
+        document.querySelectorAll('.profile-option').forEach(function (o) { o.addEventListener('click', function () { setTimeout(refresh, 30); }); });
+    })();
+</script>
+</body>
+</html>

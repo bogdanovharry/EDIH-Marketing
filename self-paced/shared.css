@@ -659,3 +659,13 @@ html[data-tool="all"] .tool-block, html:not([data-tool-x]) .tool-block-none { bo
 @media print { body.print-all .slide .result.real { max-height: none !important; overflow: visible !important; } }
 
 .ex-area { display: inline-block; margin-right: 8px; padding: 1px 8px; border-radius: 99px; background: rgba(44,55,129,.1); color: var(--blue); font: 700 11px 'Space Mono', monospace; letter-spacing: .5px; text-transform: uppercase; }
+
+details.more { margin-top: 14px; padding: 10px 14px; border-radius: 12px; background: rgba(44,55,129,.06); }
+details.more > summary { cursor: pointer; font-weight: 700; color: var(--blue); }
+details.more .tool-block { display: block !important; }
+.tl { display: grid; gap: 10px; margin-top: 10px; }
+.tl-row { padding: 14px 18px; border-radius: 14px; font-size: 17px; line-height: 1.5; }
+.tl-row b { display: block; margin-bottom: 2px; }
+.tl-row.red { background: rgba(220,78,64,.12); border-left: 6px solid #dc4e40; }
+.tl-row.amber { background: rgba(251,191,36,.18); border-left: 6px solid #f59e0b; }
+.tl-row.green { background: rgba(46,158,107,.14); border-left: 6px solid #2e9e6b; }
