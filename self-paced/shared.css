@@ -688,3 +688,7 @@ html:not([data-profile]) [data-p="public"] { display: none !important; }
 .follow button:hover { background: var(--blue); color: #fff; }
 
 #demoAll { display: none !important; }
+
+ul.theory { list-style: none; padding: 0; display: grid; gap: 10px; margin-top: 8px; }
+ul.theory li { padding: 14px 18px 14px 44px; border-radius: 14px; background: rgba(255,255,255,.75); border: 1px solid rgba(44,55,129,.12); font-size: 18px; line-height: 1.5; position: relative; }
+ul.theory li::before { content: "\2713"; position: absolute; left: 16px; top: 13px; color: #2e9e6b; font-weight: 800; }
