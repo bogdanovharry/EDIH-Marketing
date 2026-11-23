@@ -167,7 +167,7 @@
 
     /* prompt cards: {{profile.key|hint}} / {{sec.key|hint}} are prefilled from the plan, {{in.key|hint}} is a free field; fields stay editable */
     function brief(v) {
-        v = (v || '').replace(/\s+/g, ' ').trim();
+        v = (v || '').replace(/\*\*|__|`/g, '').replace(/#+\s*/g, '').replace(/\s+/g, ' ').trim();
         if (v.length <= 200) return v;
         var cut = v.slice(0, 200), i = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('; '));
         return (i > 100 ? cut.slice(0, i + 1) : cut.replace(/\s+\S*$/, '') + '…');
