@@ -669,3 +669,6 @@ details.more .tool-block { display: block !important; }
 .tl-row.red { background: rgba(220,78,64,.12); border-left: 6px solid #dc4e40; }
 .tl-row.amber { background: rgba(251,191,36,.18); border-left: 6px solid #f59e0b; }
 .tl-row.green { background: rgba(46,158,107,.14); border-left: 6px solid #2e9e6b; }
+
+/* no profile chosen yet: show the business variant only */
+html:not([data-profile]) [data-p="public"] { display: none !important; }

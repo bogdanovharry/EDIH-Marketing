@@ -107,6 +107,7 @@
             }
         }
 
+        var curProfile = readStore('m4-profile');
         function frameOf(id) { return document.querySelector('#' + id + ' iframe'); }
 
         function show(id, last) {
@@ -170,7 +171,9 @@
                     e.source.postMessage({ type: 'plan-sync', plan: mine }, '*');
                 }
             }
+            if (d.type === 'profile-get' && e.source && curProfile) e.source.postMessage({ type: 'profile', profile: curProfile }, '*');
             if (d.type === 'profile-changed') {
+                curProfile = d.profile;
                 renderProfile();
                 Array.prototype.forEach.call(document.querySelectorAll('iframe'), function (f) {
                     if (f.contentWindow) f.contentWindow.postMessage({ type: 'profile', profile: d.profile }, '*');

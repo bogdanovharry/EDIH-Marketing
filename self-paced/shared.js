@@ -21,6 +21,8 @@
     var stored = readStore(PROFILE_KEY);
     if (fromUrl === 'sme' || fromUrl === 'public') { stored = fromUrl; writeStore(PROFILE_KEY, fromUrl); }
     applyProfile(stored);
+    /* inside the shell, storage may be blocked: ask the parent which profile was chosen */
+    if (window.parent !== window) window.parent.postMessage({ type: 'profile-get' }, '*');
     window.M4 = {
         getProfile: function () { return document.documentElement.dataset.profile || null; },
         setProfile: function (p) {
