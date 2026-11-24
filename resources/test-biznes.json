@@ -1,467 +1,493 @@
 {
   "title": "Тест: ИИ в работата и дигиталния маркетинг (бизнес)",
-  "language": "bg",
-  "passingScorePercent": 70,
+  "description": "20 въпроса върху материала на курса.",
+  "duration_minutes": 30,
+  "passing_score": 70,
+  "max_attempts": 2,
+  "is_published": false,
+  "module": {
+    "name": "ИИ в работата и дигиталния маркетинг"
+  },
   "questions": [
     {
-      "id": 1,
-      "type": "single_choice",
-      "question": "Какво прави проектът в ChatGPT или Gemini?",
-      "options": [
-        {
-          "id": 0,
-          "text": "Пази инструкции и контекст за всички чатове по темата"
-        },
-        {
-          "id": 1,
-          "text": "Публикува сам в социалните мрежи"
-        },
-        {
-          "id": 2,
-          "text": "Заменя проверката на фактите"
-        }
-      ],
-      "correctOptionId": 0,
-      "correctAnswer": "Пази инструкции и контекст за всички чатове по темата",
+      "question_type": "single_choice",
+      "question_text": "Какво прави проектът в ChatGPT или Gemini?",
+      "points": 1,
+      "order_index": 0,
       "explanation": "Проектът пази визитката и инструкциите, затова не ги пишете във всеки промпт.",
-      "points": 1
-    },
-    {
-      "id": 2,
-      "type": "single_choice",
-      "question": "Кое НЕ се поставя в ИИ?",
       "options": [
         {
-          "id": 0,
-          "text": "Публична информация за фирмата"
+          "option_text": "Пази инструкции и контекст за всички чатове по темата",
+          "is_correct": true,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Имена и телефони на клиенти"
+          "option_text": "Публикува сам в социалните мрежи",
+          "is_correct": false,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Идеи за текстове"
+          "option_text": "Заменя проверката на фактите",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "Имена и телефони на клиенти",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Кое НЕ се поставя в ИИ?",
+      "points": 1,
+      "order_index": 1,
       "explanation": "Личните данни се скриват или не се поставят.",
-      "points": 1
-    },
-    {
-      "id": 3,
-      "type": "single_choice",
-      "question": "Кой цвят на светофара означава „влиза след скриване на имената“?",
       "options": [
         {
-          "id": 0,
-          "text": "Червен"
+          "option_text": "Публична информация за фирмата",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Жълт"
+          "option_text": "Имена и телефони на клиенти",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Зелен"
+          "option_text": "Идеи за текстове",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "Жълт",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Кой цвят на светофара означава „влиза след скриване на имената“?",
+      "points": 1,
+      "order_index": 2,
       "explanation": "Червеното не влиза никога, жълтото влиза след скриване, зеленото е свободно.",
-      "points": 1
-    },
-    {
-      "id": 4,
-      "type": "single_choice",
-      "question": "Какви са трите части на добра публикация?",
       "options": [
         {
-          "id": 0,
-          "text": "Кука, полза, призив"
+          "option_text": "Червен",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Заглавие, снимка, хаштаг"
+          "option_text": "Жълт",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Цена, отстъпка, срок"
+          "option_text": "Зелен",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 0,
-      "correctAnswer": "Кука, полза, призив",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Какви са трите части на добра публикация?",
+      "points": 1,
+      "order_index": 3,
       "explanation": "Куката спира погледа, ползата отговаря на „какво печеля аз“, призивът е едно действие.",
-      "points": 1
-    },
-    {
-      "id": 5,
-      "type": "single_choice",
-      "question": "С кой етап започва планът по модела SOSTAC?",
       "options": [
         {
-          "id": 0,
-          "text": "Тактики"
+          "option_text": "Кука, полза, призив",
+          "is_correct": true,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Ситуация: къде сме сега"
+          "option_text": "Заглавие, снимка, хаштаг",
+          "is_correct": false,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Контрол"
+          "option_text": "Цена, отстъпка, срок",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "Ситуация: къде сме сега",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "С кой етап започва планът по модела SOSTAC?",
+      "points": 1,
+      "order_index": 4,
       "explanation": "Планът започва с анализ на ситуацията.",
-      "points": 1
-    },
-    {
-      "id": 6,
-      "type": "single_choice",
-      "question": "Как да получите анализ на сайта си от ИИ чат?",
       "options": [
         {
-          "id": 0,
-          "text": "Пишете „прегледай сайта ми“"
+          "option_text": "Тактики",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Качвате снимка и питате какво да поправите"
+          "option_text": "Ситуация: къде сме сега",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "ИИ вижда всички сайтове сам"
+          "option_text": "Контрол",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "Качвате снимка и питате какво да поправите",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Как да получите анализ на сайта си от ИИ чат?",
+      "points": 1,
+      "order_index": 5,
       "explanation": "Чатът вижда само онова, което му дадете.",
-      "points": 1
-    },
-    {
-      "id": 7,
-      "type": "single_choice",
-      "question": "По какво описваме клиента за маркетинга?",
       "options": [
         {
-          "id": 0,
-          "text": "Само възраст и пол"
+          "option_text": "Пишете „прегледай сайта ми“",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Ситуация, мотив и пречка"
+          "option_text": "Качвате снимка и питате какво да поправите",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Само по доход"
+          "option_text": "ИИ вижда всички сайтове сам",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "Ситуация, мотив и пречка",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "По какво описваме клиента за маркетинга?",
+      "points": 1,
+      "order_index": 6,
       "explanation": "„Когато … искам … за да …“ и пречката.",
-      "points": 1
-    },
-    {
-      "id": 8,
-      "type": "single_choice",
-      "question": "Кое е добро предложение?",
       "options": [
         {
-          "id": 0,
-          "text": "„Най-доброто на пазара“"
+          "option_text": "Само възраст и пол",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "„Ние помагаме на [кого] да [постигне] без [болка]“"
+          "option_text": "Ситуация, мотив и пречка",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "„Качествено и евтино“"
+          "option_text": "Само по доход",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "„Ние помагаме на [кого] да [постигне] без [болка]“",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Кое е добро предложение?",
+      "points": 1,
+      "order_index": 7,
       "explanation": "Конкретно и доказуемо.",
-      "points": 1
-    },
-    {
-      "id": 9,
-      "type": "single_choice",
-      "question": "Колко канала са разумни за начало?",
       "options": [
         {
-          "id": 0,
-          "text": "Колкото се може повече"
+          "option_text": "„Най-доброто на пазара“",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Най-много три, които поддържате"
+          "option_text": "„Ние помагаме на [кого] да [постигне] без [болка]“",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Нито един"
+          "option_text": "„Качествено и евтино“",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "Най-много три, които поддържате",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Колко канала са разумни за начало?",
+      "points": 1,
+      "order_index": 8,
       "explanation": "Фокусът дава редовност и резултат.",
-      "points": 1
-    },
-    {
-      "id": 10,
-      "type": "single_choice",
-      "question": "Каква е добра цел?",
       "options": [
         {
-          "id": 0,
-          "text": "„Да растем“"
+          "option_text": "Колкото се може повече",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Измерима цел със срок и начална стойност"
+          "option_text": "Най-много три, които поддържате",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Пет цели наведнъж"
+          "option_text": "Нито един",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "Измерима цел със срок и начална стойност",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Каква е добра цел?",
+      "points": 1,
+      "order_index": 9,
       "explanation": "Цел без срок е пожелание.",
-      "points": 1
-    },
-    {
-      "id": 11,
-      "type": "single_choice",
-      "question": "Колко цвята има в добър бранд наръчник?",
       "options": [
         {
-          "id": 0,
-          "text": "1 основен и 2–4 допълващи"
+          "option_text": "„Да растем“",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "10 равноправни"
+          "option_text": "Измерима цел със срок и начална стойност",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Само черно и бяло"
+          "option_text": "Пет цели наведнъж",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 0,
-      "correctAnswer": "1 основен и 2–4 допълващи",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Колко цвята има в добър бранд наръчник?",
+      "points": 1,
+      "order_index": 10,
       "explanation": "Основният води, допълващите подкрепят.",
-      "points": 1
-    },
-    {
-      "id": 12,
-      "type": "single_choice",
-      "question": "Откъде вземате точните HEX кодове на цветовете?",
       "options": [
         {
-          "id": 0,
-          "text": "ИИ ги измисля винаги вярно"
+          "option_text": "1 основен и 2–4 допълващи",
+          "is_correct": true,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "От вашите файлове"
+          "option_text": "10 равноправни",
+          "is_correct": false,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "От случаен сайт"
+          "option_text": "Само черно и бяло",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "От вашите файлове",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Откъде вземате точните HEX кодове на цветовете?",
+      "points": 1,
+      "order_index": 11,
       "explanation": "ИИ предлага, а точните кодове потвърждавате от вашите материали.",
-      "points": 1
-    },
-    {
-      "id": 13,
-      "type": "single_choice",
-      "question": "Какво са стълбове на съдържанието?",
       "options": [
         {
-          "id": 0,
-          "text": "Няколко повтарящи се теми"
+          "option_text": "ИИ ги измисля винаги вярно",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Колони в таблица"
+          "option_text": "От вашите файлове",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Платени реклами"
+          "option_text": "От случаен сайт",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 0,
-      "correctAnswer": "Няколко повтарящи се теми",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Какво са стълбове на съдържанието?",
+      "points": 1,
+      "order_index": 12,
       "explanation": "Обикновено 3–5 теми.",
-      "points": 1
-    },
-    {
-      "id": 14,
-      "type": "single_choice",
-      "question": "Какво казва календарът за съдържание?",
       "options": [
         {
-          "id": 0,
-          "text": "Кога, къде и за какво се публикува"
+          "option_text": "Няколко повтарящи се теми",
+          "is_correct": true,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Колко струва реклама"
+          "option_text": "Колони в таблица",
+          "is_correct": false,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Кои са конкурентите"
+          "option_text": "Платени реклами",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 0,
-      "correctAnswer": "Кога, къде и за какво се публикува",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Какво казва календарът за съдържание?",
+      "points": 1,
+      "order_index": 13,
       "explanation": "Ден, канал, стълб и формат.",
-      "points": 1
-    },
-    {
-      "id": 15,
-      "type": "single_choice",
-      "question": "Какво съдържа добър визуален промпт?",
       "options": [
         {
-          "id": 0,
-          "text": "Само „красиво изображение“"
+          "option_text": "Кога, къде и за какво се публикува",
+          "is_correct": true,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Какво е в кадъра, композиция, светлина, обработка и какво да няма"
+          "option_text": "Колко струва реклама",
+          "is_correct": false,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Само цветове"
+          "option_text": "Кои са конкурентите",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "Какво е в кадъра, композиция, светлина, обработка и какво да няма",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Какво съдържа добър визуален промпт?",
+      "points": 1,
+      "order_index": 14,
       "explanation": "Същите четири описания като в бранд наръчника.",
-      "points": 1
-    },
-    {
-      "id": 16,
-      "type": "single_choice",
-      "question": "Къде добавяте надписа върху изображението?",
       "options": [
         {
-          "id": 0,
-          "text": "Генераторът винаги го пише безупречно"
+          "option_text": "Само „красиво изображение“",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "В редактор, след генерирането"
+          "option_text": "Какво е в кадъра, композиция, светлина, обработка и какво да няма",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Не е нужен надпис"
+          "option_text": "Само цветове",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "В редактор, след генерирането",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Къде добавяте надписа върху изображението?",
+      "points": 1,
+      "order_index": 15,
       "explanation": "Генераторите често бъркат кирилицата.",
-      "points": 1
-    },
-    {
-      "id": 17,
-      "type": "single_choice",
-      "question": "Какво важи за описанието на бизнеса в Google профила?",
       "options": [
         {
-          "id": 0,
-          "text": "До 750 знака, без връзки и промоционални цени"
+          "option_text": "Генераторът винаги го пише безупречно",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Неограничена дължина"
+          "option_text": "В редактор, след генерирането",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Задължително с цени"
+          "option_text": "Не е нужен надпис",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 0,
-      "correctAnswer": "До 750 знака, без връзки и промоционални цени",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Какво важи за описанието на бизнеса в Google профила?",
+      "points": 1,
+      "order_index": 16,
       "explanation": "Така е по помощната страница на Google.",
-      "points": 1
-    },
-    {
-      "id": 18,
-      "type": "single_choice",
-      "question": "На кого пращате имейл кампания?",
       "options": [
         {
-          "id": 0,
-          "text": "На всички, чиито адреси имате"
+          "option_text": "До 750 знака, без връзки и промоционални цени",
+          "is_correct": true,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Само на хора със съгласие, с връзка за отписване"
+          "option_text": "Неограничена дължина",
+          "is_correct": false,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "На клиентите на конкурент"
+          "option_text": "Задължително с цени",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "Само на хора със съгласие, с връзка за отписване",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "На кого пращате имейл кампания?",
+      "points": 1,
+      "order_index": 17,
       "explanation": "Съгласието и отписването са задължителни.",
-      "points": 1
-    },
-    {
-      "id": 19,
-      "type": "single_choice",
-      "question": "Как се тества реклама или тема?",
       "options": [
         {
-          "id": 0,
-          "text": "Променяте всичко наведнъж"
+          "option_text": "На всички, чиито адреси имате",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "Променяте само един елемент"
+          "option_text": "Само на хора със съгласие, с връзка за отписване",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "Не се тества"
+          "option_text": "На клиентите на конкурент",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 1,
-      "correctAnswer": "Променяте само един елемент",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "Как се тества реклама или тема?",
+      "points": 1,
+      "order_index": 18,
       "explanation": "Така знаете какво е подействало.",
-      "points": 1
-    },
-    {
-      "id": 20,
-      "type": "single_choice",
-      "question": "С какво започвате при следене на числата?",
       "options": [
         {
-          "id": 0,
-          "text": "С 2–3 числа, които отговарят на целта"
+          "option_text": "Променяте всичко наведнъж",
+          "is_correct": false,
+          "order_index": 0
         },
         {
-          "id": 1,
-          "text": "С всички налични числа"
+          "option_text": "Променяте само един елемент",
+          "is_correct": true,
+          "order_index": 1
         },
         {
-          "id": 2,
-          "text": "С графики преди да има данни"
+          "option_text": "Не се тества",
+          "is_correct": false,
+          "order_index": 2
         }
-      ],
-      "correctOptionId": 0,
-      "correctAnswer": "С 2–3 числа, които отговарят на целта",
+      ]
+    },
+    {
+      "question_type": "single_choice",
+      "question_text": "С какво започвате при следене на числата?",
+      "points": 1,
+      "order_index": 19,
       "explanation": "Малко, редовно и с едно действие.",
-      "points": 1
+      "options": [
+        {
+          "option_text": "С 2–3 числа, които отговарят на целта",
+          "is_correct": true,
+          "order_index": 0
+        },
+        {
+          "option_text": "С всички налични числа",
+          "is_correct": false,
+          "order_index": 1
+        },
+        {
+          "option_text": "С графики преди да има данни",
+          "is_correct": false,
+          "order_index": 2
+        }
+      ]
     }
   ]
 }
