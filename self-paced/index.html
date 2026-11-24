@@ -123,7 +123,7 @@
             if (!f) {
                 f = document.createElement('iframe');
                 f.title = step.label;
-                f.src = step.file;
+                f.src = step.file + (curProfile ? '?profile=' + curProfile : '');
                 sec.appendChild(f);
             }
             if (last) setTimeout(function () { f.contentWindow.postMessage({ type: 'go-to-last-slide' }, '*'); }, 150);
@@ -176,7 +176,9 @@
                 curProfile = d.profile;
                 renderProfile();
                 Array.prototype.forEach.call(document.querySelectorAll('iframe'), function (f) {
-                    if (f.contentWindow) f.contentWindow.postMessage({ type: 'profile', profile: d.profile }, '*');
+                    if (!f.contentWindow) return;
+                    if (f.contentWindow === e.source) { f.contentWindow.postMessage({ type: 'profile', profile: d.profile }, '*'); return; }
+                    f.src = f.getAttribute('src').split('?')[0] + '?profile=' + d.profile;   // reload so the wording matches the new profile
                 });
             }
         });
