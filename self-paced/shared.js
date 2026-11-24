@@ -192,6 +192,8 @@
         return (i > 100 ? cut.slice(0, i + 1) : cut.replace(/\s+\S*$/, '') + '…');
     }
     Array.prototype.forEach.call(document.querySelectorAll('.prompt-box'), function (box) {
+        var curP = document.documentElement.dataset.profile || 'sme';
+        Array.prototype.forEach.call(box.querySelectorAll('[data-p]'), function (el) { if (el.dataset.p !== curP) el.parentNode.removeChild(el); });
         var tpl = box.textContent.trim(), title = box.dataset.title, wrap = document.createElement('div');
         var body = document.createElement('div'); body.className = 'pb-text';
         box.textContent = '';
