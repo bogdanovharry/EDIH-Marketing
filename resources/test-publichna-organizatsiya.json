@@ -11,7 +11,7 @@
   "questions": [
     {
       "question_type": "single_choice",
-      "question_text": "Какво прави проектът в ChatGPT или Gemini?",
+      "question_text": "Какво прави проектът в ChatGPT (в Gemini: skill)?",
       "points": 1,
       "order_index": 0,
       "explanation": "Проектът пази визитката и инструкциите, затова не ги пишете във всеки промпт.",
@@ -382,7 +382,7 @@
           "order_index": 0
         },
         {
-          "option_text": "В редактор, след генерирането",
+          "option_text": "В Canva или друг редактор, след генерирането",
           "is_correct": true,
           "order_index": 1
         },
