@@ -395,7 +395,7 @@
     },
     {
       "question_type": "single_choice",
-      "question_text": "Какво важи за описанието на организацията в Google профила?",
+      "question_text": "Какво е правилото на курса за описанието на организацията в Google профила?",
       "points": 1,
       "order_index": 16,
       "explanation": "Така е по помощната страница на Google.",
